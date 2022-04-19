@@ -1,7 +1,15 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/login">Log In</router-link> |
+    <router-link to="/frontdesks">Frontdesks</router-link> |
+    <router-link to="/clientes">Clientes</router-link> |
+    <router-link to="/entrenadores">Entrenadores</router-link> |
+    <router-link to="/pagos">Pagos</router-link> |
+    <router-link to="/citas">Citas</router-link> |
+    <router-link to="/membresias">Membresias</router-link> |
+    <router-link to="/objetivos">Objetivos</router-link> |
   </nav>
   <router-view/>
 </template>

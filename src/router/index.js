@@ -28,7 +28,8 @@ const routes = [
   {
     path: '/cliente/:id',
     name: 'cliente',
-    component: () => import(/* webpackChunkName: "users" */ '../views/UserView.vue')
+    component: () => import(/* webpackChunkName: "users" */ '../views/UserView.vue'),
+    props: true
   },
   {
     path: '/crear_cliente',
@@ -43,7 +44,8 @@ const routes = [
   {
     path: '/frontdesk/:id',
     name: 'frontdesk',
-    component: () => import(/* webpackChunkName: "frontdesk" */ '../views/FrontdeskView.vue')
+    component: () => import(/* webpackChunkName: "frontdesk" */ '../views/FrontdeskView.vue'),
+    props: true
   },
   {
     path: '/crear_frontdesk',
@@ -58,7 +60,8 @@ const routes = [
   {
     path: '/entrenador/:id',
     name: 'entrenador',
-    component: () => import(/* webpackChunkName: "trainers" */ '../views/TrainerView.vue')
+    component: () => import(/* webpackChunkName: "trainers" */ '../views/TrainerView.vue'),
+    props: true
   },
   {
     path: '/crear_entrenador',
@@ -73,7 +76,8 @@ const routes = [
   {
     path: '/membresia/:id',
     name: 'membresia',
-    component: () => import(/* webpackChunkName: "memberships" */ '../views/MembershipView.vue')
+    component: () => import(/* webpackChunkName: "memberships" */ '../views/MembershipView.vue'),
+    props: true
   },
   {
     path: '/crear_membresia',
@@ -88,7 +92,8 @@ const routes = [
   {
     path: '/objetivo/:id',
     name: 'objetivo',
-    component: () => import(/* webpackChunkName: "objectives" */ '../views/ObjectiveView.vue')
+    component: () => import(/* webpackChunkName: "objectives" */ '../views/ObjectiveView.vue'),
+    props: true
   },
   {
     path: '/crear_objetivo',
@@ -104,6 +109,11 @@ const routes = [
     path: '/citas',
     name: 'citas',
     component: () => import(/* webpackChunkName: "appointments" */ '../views/AppointmentsView.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import(/* webpackChunkName: "notfound" */ '../views/NotFoundView.vue')
   }
 ]
 

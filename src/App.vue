@@ -1,4 +1,40 @@
 <template>
+<nav class="navbar navbar-custom navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/logo.png" alt="" width="200" class="d-inline-block align-text-center">
+    </a>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <router-link to="/">Panel de Control</router-link> |
+        </li>
+        <li class="nav-item">
+            <router-link to="/clientes">Usuarios</router-link> |
+        </li>
+        <li class="nav-item">
+            <router-link to="/pagos">Pagos</router-link> |
+        </li>
+        <li class="nav-item">
+            <router-link to="/citas">Citas</router-link> |
+        </li>
+        <li class="nav-item">
+            <router-link to="/objetivos">Administracion</router-link> |
+        </li>
+      </ul>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+          <img src="./assets/profile.png" alt="" width="50" class="rounded-image d-inline-block align-text-center ">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
@@ -15,24 +51,5 @@
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import './assets/styles.css';
 </style>

@@ -5,23 +5,13 @@
       <img src="./assets/logo.png" alt="" width="200" class="d-inline-block align-text-center">
     </a>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-            <router-link to="/">Panel de Control</router-link> |
-        </li>
-        <li class="nav-item">
-            <router-link to="/clientes">Usuarios</router-link> |
-        </li>
-        <li class="nav-item">
-            <router-link to="/pagos">Pagos</router-link> |
-        </li>
-        <li class="nav-item">
-            <router-link to="/citas">Citas</router-link> |
-        </li>
-        <li class="nav-item">
-            <router-link to="/objetivos">Administracion</router-link> |
-        </li>
-      </ul>
+      <div class="navbar-nav ms-auto">
+        <router-link class="nav-item" to="/">Panel de Control</router-link> |
+        <router-link class="nav-item" :to="{name: 'UsuariosPrincipal'}">Usuarios</router-link> |
+        <router-link class="nav-item" to="/pagos">Pagos</router-link> |
+        <router-link class="nav-item" to="/citas">Citas</router-link> |
+        <router-link class="nav-item" to="/objetivos">Administracion</router-link> |
+      </div>
       <div class="btn-group">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
           <img src="./assets/profile.png" alt="" width="50" class="rounded-image d-inline-block align-text-center ">

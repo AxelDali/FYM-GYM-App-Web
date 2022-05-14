@@ -106,6 +106,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "payments" */ '../views/PaymentsView.vue')
   },
   {
+    path: '/registrar_pago',
+    name: 'registrar_pago',
+    component: () => import(/* webpackChunkName: "payments" */ '../views/NewPay.vue')
+  },
+  {
     path: '/citas',
     name: 'citas',
     component: () => import(/* webpackChunkName: "appointments" */ '../views/AppointmentsView.vue')

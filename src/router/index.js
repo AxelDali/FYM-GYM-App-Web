@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'PanelDeControl',
     component: HomeView
   },
   {
@@ -21,52 +21,27 @@ const routes = [
     component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
   },
   {
-    path: '/clientes',
-    name: 'clientes',
-    component: () => import(/* webpackChunkName: "users" */ '../views/UsersView.vue')
-  },
-  {
-    path: '/cliente/:id',
-    name: 'cliente',
-    component: () => import(/* webpackChunkName: "users" */ '../views/UserView.vue'),
-    props: true
-  },
-  {
-    path: '/crear_cliente',
-    name: 'crear_cliente',
-    component: () => import(/* webpackChunkName: "users" */ '../views/NewUserView.vue')
-  },
-  {
-    path: '/frontdesks',
-    name: 'frontdesks',
-    component: () => import(/* webpackChunkName: "frontdesk" */ '../views/FrontdesksView.vue')
-  },
-  {
-    path: '/frontdesk/:id',
-    name: 'frontdesk',
-    component: () => import(/* webpackChunkName: "frontdesk" */ '../views/FrontdeskView.vue'),
-    props: true
-  },
-  {
-    path: '/crear_frontdesk',
-    name: 'crear_frontdesk',
-    component: () => import(/* webpackChunkName: "frontdesk" */ '../views/NewFrontdeskView.vue')
-  },
-  {
-    path: '/entrenadores',
-    name: 'entrenadores',
-    component: () => import(/* webpackChunkName: "trainers" */ '../views/TrainersView.vue')
-  },
-  {
-    path: '/entrenador/:id',
-    name: 'entrenador',
-    component: () => import(/* webpackChunkName: "trainers" */ '../views/TrainerView.vue'),
-    props: true
-  },
-  {
-    path: '/crear_entrenador',
-    name: 'crear_entrenador',
-    component: () => import(/* webpackChunkName: "trainers" */ '../views/NewTrainerView.vue')
+    path: '/usuarios',
+    name: 'UsuariosPrincipal',
+    component: () => import(/* webpackChunkName: "users" */ '../views/BlankView.vue'),
+    redirect: '/usuarios/lista',
+    children: [
+      {
+        path: 'lista',
+        name: 'Usuarios',
+        component: () => import(/* webpackChunkName: "users" */ '../views/UsersView.vue')
+      },
+      {
+        path: ':id',
+        name: 'Usuario',
+        component: () => import(/* webpackChunkName: "users" */ '../views/UserView.vue')
+      },
+      {
+        path: 'crear',
+        name: 'UsuarioNuevo',
+        component: () => import(/* webpackChunkName: "users" */ '../views/NewUserView.vue')
+      }
+    ]
   },
   {
     path: '/membresias',
@@ -74,15 +49,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "memberships" */ '../views/MembershipsView.vue')
   },
   {
-    path: '/membresia/:id',
+    path: '/membresias/:id',
     name: 'membresia',
     component: () => import(/* webpackChunkName: "memberships" */ '../views/MembershipView.vue'),
     props: true
   },
   {
-    path: '/crear_membresia',
+    path: '/membresias/crear',
     name: 'crear_membresia',
-    component: () => import(/* webpackChunkName: "memberships" */ '../views/NewMembershipView.vue')
+    component: () => import(/* webpackChunkName: "memberships" */ '../views/NewMembershipView.vue'),
+    props: { crear: true }
   },
   {
     path: '/objetivos',
@@ -90,15 +66,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "objectives" */ '../views/ObjectivesView.vue')
   },
   {
-    path: '/objetivo/:id',
+    path: '/objetivos/:id',
     name: 'objetivo',
     component: () => import(/* webpackChunkName: "objectives" */ '../views/ObjectiveView.vue'),
     props: true
   },
   {
-    path: '/crear_objetivo',
+    path: '/objetivos/crear',
     name: 'crear_objetivo',
-    component: () => import(/* webpackChunkName: "objectives" */ '../views/NewObjectiveView.vue')
+    component: () => import(/* webpackChunkName: "objectives" */ '../views/NewObjectiveView.vue'),
+    props: { crear: true }
   },
   {
     path: '/pagos',

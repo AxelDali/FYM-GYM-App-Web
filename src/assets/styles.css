@@ -50,8 +50,8 @@ label {
 }
 
 h1 {
+    font-size: 32px;
     font-family: 'Inter', sans-serif;
-    font-size: 34px;
     font-style: italic;
     color: black;
     display: inline-block;
@@ -62,10 +62,6 @@ h1 {
     padding-left: 60px;
     padding-right: 60px;
     padding-bottom: 15px;
-}
-
-.container {
-    text-align: left;
 }
 
 #buttonSubmit{
@@ -96,9 +92,8 @@ input, select {
     font-size: 16px;
     text-align: left;
 }
-
 #imageBack {
-    width: 7%;
-    height: 7%;
-    padding-bottom: 25px;
+    width: 4%;
+    height: 4%;
+    padding-bottom: 20px;
 }

@@ -3,7 +3,7 @@
     <div class="row align-items-start">
       <div class="col align-items-start">
         <img src="../assets/back.png" id="imageBack">
-        <h1>Registrar un <span class="styleTitle"> Pago</span></h1>
+        <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Pago</span></h1>
       </div>
       <div class="col-auto">
         <button type="submit" id="buttonSubmit">Registrar pago</button>

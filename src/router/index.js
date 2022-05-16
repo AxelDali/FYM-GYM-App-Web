@@ -117,7 +117,7 @@ const routes = [
           {
             path: 'crear',
             name: 'crear_objetivo',
-            component: () => import(/* webpackChunkName: "objectives" */ '../views/NewObjectiveView.vue')
+            component: () => import(/* webpackChunkName: "objectives" */ '../views/NewObjective.vue')
           }
         ]
       },
@@ -189,7 +189,7 @@ const routes = [
           {
             path: 'crear',
             name: 'crear_maquina',
-            component: () => import(/* webpackChunkName: "machines" */ '../views/NewMachineView.vue')
+            component: () => import(/* webpackChunkName: "machines" */ '../views/NewMachine.vue')
           }
         ]
       }

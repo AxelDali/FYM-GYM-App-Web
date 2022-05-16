@@ -7,7 +7,9 @@
         </router-link>
         <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Pago</span></h1>
       </div>
-      <div class="col-auto">
+      <div col="col">
+      </div>
+      <div class="col">
         <button type="submit" id="buttonSubmit">Registrar pago</button>
       </div>
     </div>
@@ -22,7 +24,7 @@
         <label>Monto a pagar*:</label>
         <input
           v-model="newPayment.subtotal"
-          type="number">
+          type="number" min = "0">
       </div>
       <div class="col">
         <label>Campañas a las que aplica:</label>
@@ -35,8 +37,6 @@
         <div>
           <label style="font-size:18px">$</label>
         </div>
-      </div>
-      <div class="col">
       </div>
     </div>
   </form>

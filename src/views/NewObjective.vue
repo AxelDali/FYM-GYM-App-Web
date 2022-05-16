@@ -1,24 +1,23 @@
 <template>
   <div class="home">
-    <PaymentForm :payment="payment"/>
+    <ObjetiveForm :obejtive="objetive"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PaymentForm from '@/components/PaymentForm.vue'
+import ObjetiveForm from '@/components/ObjectiveForm.vue'
 
 export default {
-  name: 'CrearPago',
+  name: 'CrearObjetivo',
   components: {
-    PaymentForm
+    ObjetiveForm
   },
   data () {
     return {
-      payment: {
+      Objetive: {
         name: '',
-        period: '',
-        discount: ''
+        description: ''
       }
     }
   }

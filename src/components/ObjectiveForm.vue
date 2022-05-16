@@ -15,11 +15,11 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Nombre *:</label><br>
-      <input v-model="newGym.name" type="text">
+      <input v-model="newObjective.name" type="text">
     </div>
     <div class="col">
       <label>Descripcion *</label><br>
-      <input v-model="newGym.phone" type="number" style="height:30px" >
+      <input v-model="newObjective.description" type="number" style="height:30px" >
     </div>
     <div class="col">
     </div>
@@ -32,11 +32,11 @@
 export default {
   data () {
     return {
-      newObjetive: { ...this.objetive }
+      newObjective: { ...this.objective }
     }
   },
   props: {
-    objetive: {
+    objective: {
       required: true,
       type: Object
     }

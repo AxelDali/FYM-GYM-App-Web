@@ -3,7 +3,7 @@
   <br>
   <div class="row align-items-start">
     <div class="col-md-6">
-      <router-link :to="{name: 'maquinas'}"><img src="../assets/back.png" id="back-md-6"></router-link>
+      <router-link :to="{name: 'maquinas'}"><img src="../assets/back.png" id="back-md-6" style="width: 10%;"></router-link>
       <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Maquina</span></h1>
     </div>
     <div class="col-md-3">
@@ -15,19 +15,19 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Nombre *:</label><br>
-      <input v-model="newGym.name" type="text">
+      <input v-model="newMachine.name" type="text">
     </div>
     <div class="col">
       <label>Serial *</label><br>
-      <input v-model="newGym.phone" type="number">
+      <input v-model="newMachine.serial" type="number">
     </div>
     <div class="col">
       <label>Ultima fecha de mantenimiento *</label><br>
-      <input v-model="newGym.cost" type="date">
+      <input v-model="newMachine.finalDate" type="date">
     </div>
     <div class="col">
       <label>Periocidad de mantenimiento(en meses)*</label><br>
-      <input v-model="newGym.capacity" type="number" min="0">
+      <input v-model="newMachine.period" type="number" min="0">
     </div>
   </div>
 </template>

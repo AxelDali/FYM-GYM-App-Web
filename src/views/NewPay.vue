@@ -6,7 +6,7 @@
 
 <script>
 // @ is an alias to /src
-import PaymentForm from '@/components/PaymentForm.vue'
+import PaymentForm from '@/components/PaymentForm'
 
 export default {
   name: 'CrearPago',

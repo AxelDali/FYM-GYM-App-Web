@@ -1,21 +1,21 @@
 <template>
   <div class="home">
-    <ObjetiveForm :obejtive="objetive"/>
+    <ObjectiveForm :objective="objective"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ObjetiveForm from '@/components/ObjectiveForm.vue'
+import ObjectiveForm from '@/components/ObjectiveForm'
 
 export default {
   name: 'CrearObjetivo',
   components: {
-    ObjetiveForm
+    ObjectiveForm
   },
   data () {
     return {
-      Objetive: {
+      Objective: {
         name: '',
         description: ''
       }

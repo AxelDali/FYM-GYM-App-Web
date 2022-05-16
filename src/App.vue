@@ -17,9 +17,9 @@
             <img src="./assets/profile.png" alt="" width="50" class="rounded-image d-inline-block align-text-center ">
           </button>
           <ul class="dropdown-menu dropdown-menu-lg-end">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Actualizar Contraseña</a></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesion</a></li>
           </ul>
         </div>
       </div>

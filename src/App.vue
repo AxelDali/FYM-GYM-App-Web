@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar navbar-custom navbar-expand-md">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <router-link class="navbar-brand" :to="{name: 'panel_de_control'}">
         <img src="./assets/logo.png" alt="" width="200" class="d-inline-block align-text-center">
-      </a>
+      </router-link>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <div class="navbar-nav ms-auto">
           <router-link class="nav-item" :to="{name: 'panel_de_control'}">Panel de Control</router-link> |

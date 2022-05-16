@@ -1,7 +1,26 @@
 <template>
-  <div class="crear gimnasio">
-    <h1>Crear gimnasio</h1>
-    <br>
-    <router-link :to="{name: 'gimnasios'}">Regresar</router-link>
+  <div class="home">
+    <GymForm :gym="gym"/>
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import GymForm from '@/components/GymForm'
+
+export default {
+  name: 'CrearGimnasio',
+  components: {
+    GymForm
+  },
+  data () {
+    return {
+      gym: {
+        name: '',
+        period: '',
+        discount: ''
+      }
+    }
+  }
+}
+</script>

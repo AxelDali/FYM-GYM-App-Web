@@ -1,8 +1,5 @@
 <template>
-  <br>
-  <router-link :to="{name: 'membresias'}">Regresar</router-link>
   <div class="home">
-    <h1>Registra una membresia</h1>
     <MembershipForm :membership="membership"/>
   </div>
 </template>

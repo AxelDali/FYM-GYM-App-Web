@@ -1,45 +1,46 @@
 <template>
-  <form @submit.prevent="">
-    <div class="row align-items-start">
-      <div class="col align-items-start">
-        <router-link :to="{name: 'pagos'}">
-          <img src="../assets/back.png" id="imageBack">
-        </router-link>
-        <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Pago</span></h1>
-      </div>
-      <div col="col">
-      </div>
-      <div class="col">
-        <button type="submit" id="buttonSubmit">Registrar pago</button>
+  <br>
+  <br>
+  <div class="row align-items-start">
+    <div class="col-md-6">
+      <router-link :to="{name: 'pagos'}"><img src="../assets/back.png" id="imageBack"></router-link>
+      <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Pago</span></h1>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-3">
+      <button type="submit" id="buttonSubmit">Registrar objetivo</button>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <label>Cliente: </label>
+      <label>Gabriel Mar</label>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <label>Monto a pagar*:</label>
+      <input
+        v-model="newPayment.subtotal"
+        type="number" min = "0">
+    </div>
+    <div class="col">
+      <label>Campañas a las que aplica:</label>
+      <select name="campaigns" v-model="newPayment.campaigns">
+        <option selected>Seleccione una campañas</option>
+        <option>Forma tu cuerpo - 35%</option>
+        <option>Energiza el corazón - 20%</option>
+        <option>Unete a la familia - 40%</option>
+      </select>
+    </div>
+    <div class="col">
+      <label>Total a pagar:</label>
+      <div>
+        <label style="font-size:18px">$</label>
       </div>
     </div>
-    <div class="row align-items-start">
-      <div class="col">
-        <label>Cliente: </label>
-        <label>Gabriel Mar</label>
-      </div>
-    </div>
-    <div class="row align-items-start">
-      <div class="col">
-        <label>Monto a pagar*:</label>
-        <input
-          v-model="newPayment.subtotal"
-          type="number" min = "0">
-      </div>
-      <div class="col">
-        <label>Campañas a las que aplica:</label>
-        <select name="campaigns" v-model="newPayment.campaigns">
-          <option selected>Seleccione una campañas</option>
-        </select>
-      </div>
-      <div class="col">
-        <label>Total a pagar:</label>
-        <div>
-          <label style="font-size:18px">$</label>
-        </div>
-      </div>
-    </div>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -59,5 +60,62 @@ export default {
 </script>
 
 <style>
+  #buttonSubmit{
+    background-color: #F29F05;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: white;
+    width: 350px;
+    height: 40px;
+    border-color: #F29F05;
+    border-radius: 8px;
+    border: solid;
+    font-weight: 600;
+  }
 
+  .styleTitle{
+      color:#F29F05;
+  }
+
+  #flexSwitchCheckDefault{
+      background-color: #F29F05;
+      text-align: center;
+      font-family: 'Poppins';
+      font-size: 14px;
+      color: white;
+      width: 50px;
+      height: 30px;
+      border-color: #F29F05;
+      border-radius: 8px;
+      border: solid;
+      font-weight: 600;
+  }
+
+  #flexSwitchCheckDefault:focus,#flexSwitchCheckDefault:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  .dropdown-menu a{
+      color: #000000 !important;
+      font-weight: bold;
+  }
+
+  input, select, option, #formFile {
+      width: 350px;
+      height: 30px;
+      border-radius: 8px;
+      border-width: 1px;
+      font-family: 'Poppins';
+      color:black;
+      font-size: 16px;
+      text-align: left;
+      font-weight: bold ;
+  }
+
+  #back {
+      width: 10%;
+      padding-bottom: 20px;
+  }
 </style>

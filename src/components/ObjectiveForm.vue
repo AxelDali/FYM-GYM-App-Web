@@ -19,7 +19,7 @@
     </div>
     <div class="col">
       <label>Descripcion *</label><br>
-      <input v-model="newObjective.description" type="number" style="height:30px" >
+      <input v-model="newObjective.description" type="number" style="height:100px" >
     </div>
     <div class="col">
     </div>

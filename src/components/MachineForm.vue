@@ -3,7 +3,7 @@
   <br>
   <div class="row align-items-start">
     <div class="col-md-6">
-      <router-link :to="{name: 'maquinas'}"><img src="../assets/back.png" id="back-md-6" style="width: 10%;"></router-link>
+      <router-link :to="{name: 'maquinas'}"><img src="../assets/back.png" id="back-md-6"></router-link>
       <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Maquina</span></h1>
     </div>
     <div class="col-md-3">

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
- 
+@import "bootstrap/dist/css/bootstrap.min.css";
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -96,4 +96,46 @@ input, select {
     width: 4%;
     height: 4%;
     padding-bottom: 20px;
+}
+
+.fondo{
+    border-color: gray;
+    background: #dbd7ce;
+  }
+tr{
+    font-family: 'Poppins';
+    font-weight:bold;
+    color:black;
+    font-size: 10px;
+    text-align: left;
+    background-color: rgba(211, 210, 210, 0.808);
+}
+#fil{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:black;
+    font-size: 10px;
+    text-align: left;
+    background-color: white;
+}
+#col{
+    font-family: 'Inter', sans-serif;
+    color:black;
+    font-size: 10px;
+    text-align: left;
+    background-color: rgba(231, 231, 231, 0.801);
+}
+
+#tabla{
+    padding-left: 60px;
+    padding-right: 40px;
+}
+
+#link{
+    color: #F29F05;
+}
+#imageSearch{
+    width: 4%;
+    height: 4%;
+    padding-bottom: 3px;
+    padding-left: 5px;
 }

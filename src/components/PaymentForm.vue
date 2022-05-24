@@ -29,9 +29,9 @@
       <label>Campañas a las que aplica:</label>
       <select name="campaigns" v-model="newPayment.campaigns">
         <option selected>Seleccione una campañas</option>
-        <option>Forma tu cuerpo - 35%</option>
-        <option>Energiza el corazón - 20%</option>
-        <option>Unete a la familia - 40%</option>
+        <option value="75">Forma tu cuerpo - 35%</option>
+        <option value="80">Energiza el corazón - 20%</option>
+        <option value="60">Unete a la familia - 40%</option>
       </select>
     </div>
     <div class="col">

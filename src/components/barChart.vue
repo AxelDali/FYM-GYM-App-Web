@@ -24,13 +24,20 @@
     <div class="col-md-4 text-center">
       <br><b></b>
       <h1 style="font-size:32px">Fecha de <span class="styleTitle"> hoy</span></h1>
-      <h1>Lunes 9 de mayo del 2022</h1><br><br><br>
+      <h1>Miercoles 25 de mayo del 2022</h1><br><br><br>
       <h1 style="font-size:32px">Aforo actual:</h1><br>
       <h1 style="font-size:60px">80 %</h1><br>
       <h1 style="font-size:32px">Personas</h1>
     </div>
   </div>
-
+  <div class="row">
+    <div class="col md-6">
+      <h1 style="font-size:28px">Pagos proximos a vencer</h1>
+    </div>
+    <div class="col md-6">
+      <h1 style="font-size:28px">Pagos vencidos</h1>
+    </div>
+  </div>
 </template>
 
 <script>

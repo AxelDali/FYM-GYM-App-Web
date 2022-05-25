@@ -117,7 +117,7 @@ const routes = [
           {
             path: 'crear',
             name: 'crear_objetivo',
-            component: () => import(/* webpackChunkName: "objectives" */ '../views/NewObjective.vue')
+            component: () => import(/* webpackChunkName: "objectives" */ '../views/NewObjectiveView.vue')
           }
         ]
       },

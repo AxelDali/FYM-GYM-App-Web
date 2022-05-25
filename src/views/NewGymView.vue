@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <GymForm :gym="gym"/>
+    <GymForm :gym="gym" @save="save"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import GymForm from '@/components/GymForm'
+import { addDocument } from '@/firebase'
 
 export default {
   name: 'CrearGimnasio',
@@ -15,11 +16,13 @@ export default {
   },
   data () {
     return {
-      gym: {
-        name: '',
-        period: '',
-        discount: ''
-      }
+      gym: {}
+    }
+  },
+  methods: {
+    save (gym) {
+      addDocument('gyms', gym)
+      this.$router.push({ name: 'gimnasios' })
     }
   }
 }

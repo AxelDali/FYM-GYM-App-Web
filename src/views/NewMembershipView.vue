@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <MembershipForm :membership="membership"/>
+    <MembershipForm :membership="membership"  @save="save"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import MembershipForm from '@/components/MembershipForm'
+import { addDocument } from '@/firebase'
 
 export default {
   name: 'CrearMembresia',
@@ -15,11 +16,13 @@ export default {
   },
   data () {
     return {
-      membership: {
-        name: '',
-        period: '',
-        discount: ''
-      }
+      membership: {}
+    }
+  },
+  methods: {
+    save (membership) {
+      addDocument('memberships', membership)
+      this.$router.push({ name: 'membresias' })
     }
   }
 }

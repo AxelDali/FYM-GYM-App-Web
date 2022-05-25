@@ -1,6 +1,6 @@
 <template>
   <div class="cliente">
-    <UserForm v-if="loaded" :user="user" edit="true" @save="save"/>
+    <UserForm v-if="loaded" :user="user" edit=true @save="save"/>
   </div>
 </template>
 

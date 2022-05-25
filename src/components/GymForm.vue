@@ -4,12 +4,13 @@
   <div class="row align-items-start">
     <div class="col-md-6">
       <router-link :to="{name: 'gimnasios'}"><img src="../assets/back.png" id="back-md-6"></router-link>
-      <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Gimnasio</span></h1>
+      <h1 v-if="!edit" style="font-size:32px">Registrar un <span class="styleTitle"> Gimnasio</span></h1>
+      <h1 v-else style="font-size:32px">Modificar un <span class="styleTitle"> Gimnasio</span></h1>
     </div>
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-      <button type="submit" id="buttonSubmit">Registrar gimnasio</button>
+      <button type="submit" id="buttonSubmit"  v-on:click="save">Registrar gimnasio</button>
     </div>
   </div>
 
@@ -93,15 +94,24 @@
 
 <script>
 export default {
+  emits: ['save'],
   data () {
     return {
       newGym: { ...this.gym }
+    }
+  },
+  methods: {
+    save () {
+      this.$emit('save', this.newGym)
     }
   },
   props: {
     gym: {
       required: true,
       type: Object
+    },
+    edit: {
+      type: String
     }
   }
 }

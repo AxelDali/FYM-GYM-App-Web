@@ -32,14 +32,15 @@
   <div class="row align-items-start">
      <div id="tabla">
       <!-- The table component -->
-       <Table :fields='fields' :membresiaData='membresiaData'></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='membershipsData' name="membresía" @delete="remove" @edit="edit"></Table>
      </div>
   </div>
 </template>
 
 <script>
 import AdministrativeNavbar from '@/components/AdministrativeNavbar'
-import Table from '@/components/tablaMembresia'
+import Table from '@/components/CatalogueTable'
+import { getCollection, deleteDocument } from '@/firebase'
 
 export default {
   name: 'tablaMembresia',
@@ -47,15 +48,26 @@ export default {
     AdministrativeNavbar,
     Table
   },
-  setup () {
-    const membresiaData = [
-      { Nombre: 'Gold', Descuento: '20%' },
-      { Nombre: 'Platino', Descuento: '25%' }
-    ]
-    const fields = [
-      'Nombre', 'Descuento'
-    ]
-    return { fields, membresiaData }
+  data () {
+    return {
+      membershipsData: null,
+      fields: ['name', 'period', 'discount'],
+      fieldsNames: ['Nombre', 'Periodo', 'Porcentaje de descuento'],
+      fetching: true
+    }
+  },
+  async created () {
+    this.membershipsData = await getCollection('memberships')
+    this.fetching = false
+  },
+  methods: {
+    async remove (id) {
+      await deleteDocument('memberships', id)
+      this.membershipsData = await getCollection('memberships')
+    },
+    edit (id) {
+      this.$router.push({ name: 'membresia', params: { id: id } })
+    }
   }
 }
 </script>

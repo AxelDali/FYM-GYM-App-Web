@@ -1,6 +1,6 @@
 <template>
   <div class="camp">
-    <CampaignForm v-if="loaded" :campaign="campaign" edit="true" @save="save" @draft="draft"/>
+    <CampaignForm v-if="loaded" :campaign="campaign" edit=true @save="save" @draft="draft"/>
   </div>
 </template>
 

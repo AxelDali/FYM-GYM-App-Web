@@ -32,7 +32,7 @@
   <div v-if="!fetching" class="row align-items-start">
      <div id="tabla">
       <!-- The table component -->
-       <Table :fields='fields' :fieldsNames='fieldsNames' :data='campaignsData' name="camp" @edit="edit" @delete="remove"></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='campaignsData' name="campaña" @edit="edit" @delete="remove"></Table>
      </div>
   </div>
 </template>

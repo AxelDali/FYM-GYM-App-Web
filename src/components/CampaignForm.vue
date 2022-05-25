@@ -103,8 +103,7 @@ export default {
       type: Object
     },
     edit: {
-      default: false,
-      type: Boolean
+      type: String
     }
   }
 }

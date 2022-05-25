@@ -32,14 +32,15 @@
   <div class="row align-items-start">
      <div id="tabla">
       <!-- The table component -->
-       <Table :fields='fields' :gymData='gymData'></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='gymsData' name="gimnasio" @delete="remove" @edit="edit"></Table>
      </div>
   </div>
 </template>
 
 <script>
 import AdministrativeNavbar from '@/components/AdministrativeNavbar'
-import Table from '@/components/tablaGym'
+import Table from '@/components/CatalogueTable'
+import { getCollection, deleteDocument } from '@/firebase'
 
 export default {
   name: 'tablaGym',
@@ -47,15 +48,26 @@ export default {
     AdministrativeNavbar,
     Table
   },
-  setup () {
-    const gymData = [
-      { Nombre: 'Titanes GMY', Teléfono: '6251158963', Mensualidad: '350', Aforo: '25' },
-      { Nombre: 'Golden GYM', Teléfono: '6241447896', Mensualidad: '500', Aforo: '30' }
-    ]
-    const fields = [
-      'Nombre', 'Teléfono', 'Mensualidad', 'Aforo'
-    ]
-    return { fields, gymData }
+  data () {
+    return {
+      gymsData: null,
+      fields: ['name', 'phone', 'cost', 'capacity'],
+      fieldsNames: ['Nombre', 'Teléfono', 'Mensualidad', 'Aforo'],
+      fetching: true
+    }
+  },
+  async created () {
+    this.gymsData = await getCollection('gyms')
+    this.fetching = false
+  },
+  methods: {
+    async remove (id) {
+      await deleteDocument('gyms', id)
+      this.gymsData = await getCollection('gyms')
+    },
+    edit (id) {
+      this.$router.push({ name: 'gimnasio', params: { id: id } })
+    }
   }
 }
 </script>

@@ -25,12 +25,12 @@ export default {
   methods: {
     save (campaign) {
       campaign.published = true
-      addDocument('employees', campaign)
+      addDocument('campaigns', campaign)
       this.$router.push({ name: 'camps' })
     },
     draft (campaign) {
       campaign.published = false
-      addDocument('employees', campaign)
+      addDocument('campaigns', campaign)
       this.$router.push({ name: 'camps' })
     }
   }

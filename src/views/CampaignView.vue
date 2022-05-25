@@ -24,18 +24,18 @@ export default {
     }
   },
   async created () {
-    this.campaign = await getDocument('employees', this.id)
+    this.campaign = await getDocument('campaigns', this.id)
     this.loaded = true
   },
   methods: {
     save (campaign) {
       campaign.published = true
-      updateDocument('employees', this.id, campaign)
+      updateDocument('campaigns', this.id, campaign)
       this.$router.push({ name: 'camps' })
     },
     draft (campaign) {
       campaign.published = false
-      updateDocument('employees', this.id, campaign)
+      updateDocument('campaigns', this.id, campaign)
       this.$router.push({ name: 'camps' })
     }
   }

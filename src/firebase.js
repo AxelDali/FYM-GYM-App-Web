@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from 'firebase/firestore'
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc, getDocs, deleteDoc } from 'firebase/firestore'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,13 +16,6 @@ const app = initializeApp(firebaseConfig)
 
 const db = getFirestore(app)
 
-export const addEmployee = (name, date) => {
-  addDoc(collection(db, 'employees'), {
-    Name: name,
-    Date: date
-  })
-}
-
 export const addDocument = async (resource, object) => {
   const docRef = await addDoc(collection(db, resource), { ...object })
   return docRef
@@ -36,4 +29,18 @@ export const updateDocument = async (resource, id, object) => {
 export const getDocument = async (resource, id) => {
   const docSnap = await getDoc(doc(db, resource, id))
   return docSnap.data()
+}
+
+export const getCollection = async (resource) => {
+  const docs = []
+  const querySnapshot = await getDocs(collection(db, resource))
+  querySnapshot.forEach((doc) => {
+    console.log({ id: doc.id, ...doc.data() })
+    docs.push({ id: doc.id, ...doc.data() })
+  })
+  return docs
+}
+
+export const deleteDocument = async (resource, id) => {
+  await deleteDoc(doc(db, resource, id))
 }

@@ -29,10 +29,10 @@
     <div class="col-md-3">
     </div>
   </div>
-  <div class="row align-items-start">
+  <div v-if="!fetching" class="row align-items-start">
      <div id="tabla">
       <!-- The table component -->
-       <Table :fields='fields' :campaignsData='campaignsData'></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :campaignsData='campaignsData' @delete="remove"></Table>
      </div>
   </div>
 </template>
@@ -40,6 +40,7 @@
 <script>
 import AdministrativeNavbar from '@/components/AdministrativeNavbar'
 import Table from '@/components/tablaCampaigns'
+import { getCollection, deleteDocument } from '@/firebase'
 
 export default {
   name: 'tablaCampaigns',
@@ -47,15 +48,23 @@ export default {
     AdministrativeNavbar,
     Table
   },
-  setup () {
-    const campaignsData = [
-      { Titulo_promocion: 'Unete a la familia', Porcentaje_descuento: '25%', Fecha_inicio: '22/05/2022', Fecha_final: '22/06/2022' },
-      { Titulo_promocion: 'Energiza tu cuerpo', Porcentaje_descuento: '10%', Fecha_inicio: '20/05/2022', Fecha_final: '08/06/2022' }
-    ]
-    const fields = [
-      'Titulo_promocion', 'Porcentaje_descuento', 'Fecha_inicio', 'Fecha_final'
-    ]
-    return { fields, campaignsData }
+  data () {
+    return {
+      campaignsData: null,
+      fields: ['title', 'discount', 'publicationDate', 'expirationDate'],
+      fieldsNames: ['Titulo', 'Descuento', 'Fecha de publicación', 'Fecha de expiración'],
+      fetching: true
+    }
+  },
+  async created () {
+    this.campaignsData = await getCollection('campaigns')
+    this.fetching = false
+  },
+  methods: {
+    async remove (id) {
+      await deleteDocument('campaigns', id)
+      this.campaignsData = await getCollection('campaigns')
+    }
   }
 }
 </script>

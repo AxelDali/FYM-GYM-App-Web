@@ -67,11 +67,11 @@
     </div>
     <div v-if="newCampaign.clientType === 'loyalty'" class="col" >
       <label>Lealtad a la que aplica *</label><br>
-      <input v-model="newCampaign.loyalty" type="number" min="0" >
+      <input v-model="newCampaign.client" type="number" min="0" >
     </div>
     <div v-if="newCampaign.clientType === 'gender'" class="col" >
       <label>Género al que aplica *</label><br>
-      <select name="genders" v-model="newCampaign.gender">
+      <select name="genders" v-model="newCampaign.client">
         <option value="female">Femenino</option>
         <option value="male">Masculino</option>
       </select>

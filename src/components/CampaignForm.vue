@@ -4,32 +4,40 @@
   <div class="row align-items-start">
     <div class="col-md-6">
       <router-link :to="{name: 'camps'}"><img src="../assets/back.png" id="back-md-6"></router-link>
-      <h1 style="font-size:32px">Registrar una <span class="styleTitle"> Campaña</span></h1>
+      <h1 v-if="!edit" style="font-size:32px">Registrar una <span class="styleTitle"> Campaña</span></h1>
+      <h1 v-else style="font-size:32px">Modificar una <span class="styleTitle"> Campaña</span></h1>
     </div>
     <div class="col-md-3">
-      <button type="submit" id="buttonSaveDraft">Guardar como borrador</button>
+      <button v-if="!newCampaign.published" type="submit" id="buttonSaveDraft" v-on:click="saveDraft">Guardar como borrador</button>
     </div>
     <div class="col-md-3">
-      <button type="submit" id="buttonSubmit">Registrar membresía</button>
+      <button type="submit" id="buttonSubmit" v-on:click="save">Registrar campaña</button>
     </div>
   </div>
 
   <div class="row align-items-start">
     <div class="col">
       <label>Título *:</label><br>
-      <input v-model="newCampaign.title" type="text">
+      <input
+        v-model="newCampaign.title"
+        type="text">
     </div>
     <div class="col">
       <label>Descripción *:</label><br>
-      <textarea v-model="newCampaign.description"></textarea>
+      <textarea
+        v-model="newCampaign.description"></textarea>
     </div>
     <div class="col">
       <label>Fecha de publicación *</label><br>
-      <input v-model="newCampaign.publicationDate" type="date">
+      <input
+        v-model="newCampaign.publicationDate"
+        type="date">
     </div>
     <div class="col">
       <label>Fecha de caducidad *</label><br>
-      <input v-model="newCampaign.expirationDate" type="date">
+      <input
+        v-model="newCampaign.expirationDate"
+        type="date">
     </div>
   </div>
 
@@ -75,19 +83,28 @@
 
 <script>
 export default {
+  emits: ['save', 'draft'],
   data () {
     return {
       newCampaign: { ...this.campaign }
     }
   },
-  mounted () {
-    this.newCampaign.discountType = 'percentage'
-    this.newCampaign.clientType = 'newAccount'
+  methods: {
+    save () {
+      this.$emit('save', this.newCampaign)
+    },
+    saveDraft () {
+      this.$emit('draft', this.newCampaign)
+    }
   },
   props: {
     campaign: {
       required: true,
       type: Object
+    },
+    edit: {
+      default: false,
+      type: Boolean
     }
   }
 }

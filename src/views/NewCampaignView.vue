@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <CampaignForm :campaign="campaign"/>
+    <CampaignForm :campaign="campaign" @save="save" @draft="draft"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import CampaignForm from '@/components/CampaignForm'
+import { addDocument } from '@/firebase'
 
 export default {
   name: 'CrearCamp',
@@ -16,10 +17,21 @@ export default {
   data () {
     return {
       campaign: {
-        name: '',
-        period: '',
-        discount: ''
+        discountType: 'percentage',
+        clientType: 'newAccount'
       }
+    }
+  },
+  methods: {
+    save (campaign) {
+      campaign.published = true
+      addDocument('employees', campaign)
+      this.$router.push({ name: 'camps' })
+    },
+    draft (campaign) {
+      campaign.published = false
+      addDocument('employees', campaign)
+      this.$router.push({ name: 'camps' })
     }
   }
 }

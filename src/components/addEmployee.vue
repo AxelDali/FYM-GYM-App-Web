@@ -20,7 +20,7 @@
 
 <script>
 
-import { addEmployee } from '@/firebase'
+import { setDocument } from '@/firebase'
 
 export default {
   name: 'addEmployee',
@@ -33,7 +33,7 @@ export default {
   methods: {
     onSubmit (e) {
       e.preventDefault()
-      addEmployee(this.name, this.date)
+      setDocument('employees', { Name: this.name, Date: this.date })
       this.name = ''
       this.date = ''
     }

@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc } from 'firebase/firestore'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -21,4 +21,19 @@ export const addEmployee = (name, date) => {
     Name: name,
     Date: date
   })
+}
+
+export const addDocument = async (resource, object) => {
+  const docRef = await addDoc(collection(db, resource), { ...object })
+  return docRef
+}
+
+export const updateDocument = async (resource, id, object) => {
+  const docRef = await setDoc(doc(db, resource, id), { ...object })
+  return docRef
+}
+
+export const getDocument = async (resource, id) => {
+  const docSnap = await getDoc(doc(db, resource, id))
+  return docSnap.data()
 }

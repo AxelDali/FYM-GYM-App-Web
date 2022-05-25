@@ -31,7 +31,7 @@
         <option selected>Seleccione una campañas</option>
         <option value="75">Forma tu cuerpo - 35%</option>
         <option value="80">Energiza el corazón - 20%</option>
-        <option value="60">Unete a la familia - 40%</option>
+        <option value="60">Únete a la familia - 40%</option>
       </select>
     </div>
     <div class="col">

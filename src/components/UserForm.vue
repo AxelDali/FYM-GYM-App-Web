@@ -4,12 +4,13 @@
     <div class="row align-items-start">
       <div class="col-md-6">
         <router-link to="/usuarios"><img src="../assets/back.png" id="back"></router-link>
-        <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Usuario</span></h1>
+        <h1 v-if="!edit" style="font-size:32px">Registrar un <span class="styleTitle"> Usuario</span></h1>
+        <h1 v-else style="font-size:32px">Modificar un <span class="styleTitle"> Usuario</span></h1>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-          <button type="submit" id="buttonSubmit">Registrar pago</button>
+          <button type="submit" id="buttonSubmit" v-on:click="save">Registrar usuario</button>
       </div>
     </div>
 
@@ -44,14 +45,14 @@
             </div>
             <div class="col">
                 <label>Apellido Paterno *</label><br>
-                <input v-model="newUser.lastname" type="text">
+                <input v-model="newUser.lastName" type="text">
             </div>
             <div class="col">
                 <label>Apellido Materno</label><br>
-                <input v-model="newUser.lastname2" type="text">
+                <input v-model="newUser.lastName2" type="text">
             </div>
             <div class="col">
-                <label>Telefono *</label><br>
+                <label>Teléfono *</label><br>
                 <input v-model="newUser.phone" type="number">
             </div>
         </div>
@@ -63,7 +64,7 @@
             </div>
             <div class="col">
                 <label>Fecha de nacimiento *</label><br>
-                <input v-model="newUser.birthdate" type="date">
+                <input v-model="newUser.birthDate" type="date">
             </div>
             <div class="col">
                 <label>Fecha de corte *</label><br>
@@ -77,8 +78,8 @@
 
         <div class="row align-items-start">
             <div class="col">
-                <label>Minutos de antelacion *:</label><br>
-                <input v-model="newUser.notifTimeWindow" type="number">
+                <label>Minutos de antelación *:</label><br>
+                <input v-model="newUser.notificationTimeWindow" type="number">
             </div>
             <div class="col">
                 <label>Genero *</label><br>
@@ -88,8 +89,8 @@
                 </select>
             </div>
             <div class="col">
-                <label>Membresia *</label><br>
-                <select name="membership" v-model="newUser.memership">
+                <label>Membresía *</label><br>
+                <select name="membership" v-model="newUser.membership">
                     <option value="pro">Pro</option>
                     <option value="normal">Normal</option>
                 </select>
@@ -97,8 +98,8 @@
             <div class="col">
                 <label>Objetivos *</label><br>
                 <select name="objectives" v-model="newUser.objectives">
-                    <option value="strenght">Fuerza</option>
-                    <option value="atheliticism">Atreticidad</option>
+                    <option value="strength">Fuerza</option>
+                    <option value="athleticism">Atletismo</option>
                 </select>
             </div>
         </div>
@@ -113,14 +114,14 @@
             </div>
             <div class="col">
                 <label>Apellido Paterno *</label><br>
-                <input v-model="newUser.lastname" type="text">
+                <input v-model="newUser.lastName" type="text">
             </div>
             <div class="col">
                 <label>Apellido Materno</label><br>
-                <input v-model="newUser.lastname2" type="text">
+                <input v-model="newUser.lastName2" type="text">
             </div>
             <div class="col">
-                <label>Telefono *</label><br>
+                <label>Teléfono *</label><br>
                 <input v-model="newUser.phone" type="number">
             </div>
         </div>
@@ -138,8 +139,8 @@
                 </select>
             </div>
             <div class="col">
-                <label>Membresia *</label><br>
-                <select name="membership" v-model="newUser.memership">
+                <label>Membresía *</label><br>
+                <select name="membership" v-model="newUser.membership">
                     <option value="pro">Pro</option>
                     <option value="normal">Normal</option>
                 </select>
@@ -160,14 +161,14 @@
             </div>
             <div class="col">
                 <label>Apellido Paterno *</label><br>
-                <input v-model="newUser.lastname" type="text">
+                <input v-model="newUser.lastName" type="text">
             </div>
             <div class="col">
                 <label>Apellido Materno</label><br>
-                <input v-model="newUser.lastname2" type="text">
+                <input v-model="newUser.lastName2" type="text">
             </div>
             <div class="col">
-                <label>Telefono *</label><br>
+                <label>Teléfono *</label><br>
                 <input v-model="newUser.phone" type="number">
             </div>
         </div>
@@ -178,18 +179,18 @@
                 <input v-model="newUser.email" type="email">
             </div>
             <div class="col">
-                <label>Fecha de certificacion *</label><br>
+                <label>Fecha de certificación *</label><br>
                 <input v-model="newUser.certificationDate" type="date">
             </div>
             <div class="col">
-                <label>Referencia de certificacion *:</label><br>
+                <label>Referencia de certificación *:</label><br>
                 <input class="form-control" type="file" id="formFile" >
             </div>
             <div class="col">
                 <label>Objetivos *</label><br>
                 <select name="objectives" v-model="newUser.objectives">
-                    <option value="strenght">Fuerza</option>
-                    <option value="atheliticism">Atreticidad</option>
+                    <option value="strength">Fuerza</option>
+                    <option value="athleticism">Atletismo</option>
                 </select>
             </div>
         </div>
@@ -197,14 +198,14 @@
         <div class="row align-items-start">
             <div class="col">
                 <label>Inicio de jornada *</label><br>
-                <select name="objectives" v-model="newUser.workshiftStart">
+                <select name="objectives" v-model="newUser.workShiftStart">
                     <option value="12:00">12:00</option>
                     <option value="13:00">13:00</option>
                 </select>
             </div>
             <div class="col">
                 <label>Final de jornada *</label><br>
-                <select name="objectives" v-model="newUser.workshiftEnd">
+                <select name="objectives" v-model="newUser.workShiftEnd">
                     <option value="12:00">12:00</option>
                     <option value="13:00">13:00</option>
                 </select>
@@ -226,17 +227,17 @@
         </div>
     </div>
 
-    <!-- Direccion -->
+    <!-- Dirección -->
     <br>
     <div class="row align-items-start">
         <div class="col">
-            <label style="font-size:32px">Direccion</label>
+            <label style="font-size:32px">Dirección</label>
         </div>
     </div>
 
     <div class="row align-items-start">
         <div class="col">
-            <label>Pais *:</label><br>
+            <label>País *:</label><br>
             <input v-model="newUser.country" type="text">
         </div>
         <div class="col">
@@ -256,14 +257,14 @@
     <div class="row align-items-start">
         <div class="col">
             <label>Numero Exterior *:</label><br>
-            <input v-model="newUser.exteriornumber" type="number">
+            <input v-model="newUser.exteriorNumber" type="number">
         </div>
         <div class="col">
             <label>Colonia *:</label><br>
             <input v-model="newUser.colony" type="text">
         </div>
         <div class="col">
-            <label>Codigo Postal *:</label><br>
+            <label>Código Postal *:</label><br>
             <input v-model="newUser.zip" type="number">
         </div>
         <div class="col">
@@ -285,18 +286,25 @@
 
 <script>
 export default {
+  emits: ['save'],
   data () {
     return {
       newUser: { ...this.user }
     }
   },
-  mounted () {
-    this.newUser.type = 'socio'
+  methods: {
+    save () {
+      this.$emit('save', this.newUser)
+    }
   },
   props: {
     user: {
       required: true,
       type: Object
+    },
+    edit: {
+      default: false,
+      type: Boolean
     }
   }
 }

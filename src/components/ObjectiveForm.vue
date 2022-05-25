@@ -18,7 +18,7 @@
       <input v-model="newObjective.name" type="text">
     </div>
     <div class="col">
-      <label>Descripcion *</label><br>
+      <label>Descripción *</label><br>
       <input v-model="newObjective.description" type="number" style="height:100px" >
     </div>
     <div class="col">

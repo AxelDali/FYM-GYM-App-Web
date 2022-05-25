@@ -52,7 +52,7 @@ export default {
       { Nombre: 'Gabriel Mar', Telefono: '6241447896', Correo: 'dali@gamil.com', Fecha_corte: '23/05/2022' }
     ]
     const fields = [
-      'Nombre', 'Telefono', 'Correo', 'Fecha_corte'
+      'Nombre', 'Teléfono', 'Correo', 'Fecha_corte'
     ]
     return { fields, pagoData }
   }

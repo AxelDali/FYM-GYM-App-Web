@@ -2,7 +2,7 @@
   <nav>
     <router-link :to="{name: 'camp_principal'}">Campañas</router-link> |
     <router-link :to="{name: 'objetivos_principal'}">Objetivos</router-link> |
-    <router-link :to="{name: 'membresias_principal'}">Membresias</router-link> |
+    <router-link :to="{name: 'membresias_principal'}">Membresías</router-link> |
     <router-link :to="{name: 'gimnasios_principal'}">Gimnasios</router-link> |
     <router-link :to="{name: 'maquinas_principal'}">Maquinas</router-link>
   </nav>

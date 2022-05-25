@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <UserForm :user="user"/>
+    <UserForm :user="user" @save="save"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import UserForm from '@/components/UserForm.vue'
+import UserForm from '@/components/UserForm'
+import { addDocument } from '@/firebase'
 
 export default {
   name: 'CrearUsuario',
@@ -16,10 +17,14 @@ export default {
   data () {
     return {
       user: {
-        name: '',
-        period: '',
-        discount: ''
+        type: 'socio'
       }
+    }
+  },
+  methods: {
+    save (user) {
+      addDocument('users', user)
+      this.$router.push({ name: 'usuarios' })
     }
   }
 }

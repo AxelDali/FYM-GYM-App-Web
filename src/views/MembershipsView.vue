@@ -2,7 +2,7 @@
   <AdministrativeNavbar/>
   <div class="row align-items-start">
     <div class="col-md-6">
-      <h1 style="font-size:32px">Modificar una <span class="styleTitle"> Membresia</span></h1>
+      <h1 style="font-size:32px">Modificar una <span class="styleTitle"> Membresía</span></h1>
     </div>
     <div class="col-md-3">
     </div>
@@ -17,12 +17,12 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-      <router-link :to="{name: 'crear_membresia'}"><button style="padding-right;:280px" type="submit" id="buttonSubmit">Crear Membresia</button></router-link>
+      <router-link :to="{name: 'crear_membresia'}"><button style="padding-right;:280px" type="submit" id="buttonSubmit">Crear Membresía</button></router-link>
     </div>
   </div>
   <div class="row align-items-start">
     <div class="col-md-6">
-       <h1 style="font-size:26px;">Lista de membresias</h1>
+       <h1 style="font-size:26px;">Lista de membresías</h1>
     </div>
     <div class="col-md-3">
     </div>

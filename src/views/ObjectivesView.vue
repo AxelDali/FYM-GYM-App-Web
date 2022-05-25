@@ -53,7 +53,7 @@ export default {
       { Titulo: 'Perder masa', Descripcion: 'Ejercicios como sentadillas, abdominales, etc' }
     ]
     const fields = [
-      'Titulo', 'Descripcion'
+      'Titulo', 'Descripción'
     ]
     return { fields, objetivoData }
   }

@@ -2,7 +2,7 @@
   <br>
   <br>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <h1 style="font-size:32px">Registro de una <span class="styleTitle"> Cita</span></h1>
     </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <label>Gimnasio</label><br>
       <select name="objectives" v-model="newAppointment.gym" class="appointmentField">
@@ -32,7 +32,7 @@
         <option selected>Seleccione una campañas</option>
         <option value="75">Forma tu cuerpo - 35%</option>
         <option value="80">Energiza el corazón - 20%</option>
-        <option value="60">Unete a la familia - 40%</option>
+        <option value="60">Únete a la familia - 40%</option>
       </select>
     </div>
     <div class="col-md-4">
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <label style="font-size:32px">Mañana</label>
     </div>
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <button type="submit" id="timeButton" class="yellow">6:00 - 7:00</button>
     </div>
@@ -65,7 +65,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <button type="submit" id="timeButton" class="yellow">7:00 - 8:00</button>
     </div>
@@ -77,7 +77,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <button type="submit" id="timeButton" class="red">8:00 - 9:00</button>
     </div>
@@ -89,7 +89,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <button type="submit" id="timeButton" class="red">9:00 - 10:00</button>
     </div>
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="row align-items-start appointmetsFrame">
+  <div class="row align-items-start appointmentsFrame">
     <div class="col-md-4">
       <button type="submit" id="timeButton" class="gray">10:00 - 11:00</button>
     </div>
@@ -141,7 +141,7 @@ export default {
   clear: both;
 }
 
-.appointmetsFrame{
+appointmentsFrame{
   margin-left: 250px;
   margin-right: 250px;
 }

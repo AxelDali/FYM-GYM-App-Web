@@ -1,5 +1,5 @@
 <template>
-  <AdministrativeNavbar/>
+  <br>
   <div class="row align-items-start">
     <div class="col-md-6">
       <h1 style="font-size:32px">Modificar un <span class="styleTitle"> Usuario</span></h1>
@@ -32,30 +32,40 @@
   <div class="row align-items-start">
      <div id="tabla">
       <!-- The table component -->
-       <Table :fields='fields' :usuarioData='usuarioData'></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='usersData' name="usuario" @delete="remove" @edit="edit"></Table>
      </div>
   </div>
 </template>
 
 <script>
-import AdministrativeNavbar from '@/components/AdministrativeNavbar'
-import Table from '@/components/tablaUsuario'
+import Table from '@/components/CatalogueTable'
+import { getCollection, deleteDocument } from '@/firebase'
 
 export default {
   name: 'tablaUsuario',
   components: {
-    AdministrativeNavbar,
     Table
   },
-  setup () {
-    const usuarioData = [
-      { Nombre: 'Axel Gomez', Telefono: '6251158963', Correo: 'gabriel@gmail.com', Tipo_Usuario: 'Socio' },
-      { Nombre: 'Gabriel Mar', Telefono: '6241447896', Correo: 'dali@gamil.com', Tipo_Usuario: 'Instructor' }
-    ]
-    const fields = [
-      'Nombre', 'Telefono', 'Correo', 'Tipo_Usuario'
-    ]
-    return { fields, usuarioData }
+  data () {
+    return {
+      usersData: null,
+      fields: ['name', 'lastName', 'phone', 'email', 'type'],
+      fieldsNames: ['Nombre', 'Apellido', 'Teléfono', 'Correo', 'Tipo de usuario'],
+      fetching: true
+    }
+  },
+  async created () {
+    this.usersData = await getCollection('users')
+    this.fetching = false
+  },
+  methods: {
+    async remove (id) {
+      await deleteDocument('users', id)
+      this.usersData = await getCollection('users')
+    },
+    edit (id) {
+      this.$router.push({ name: 'usuario', params: { id: id } })
+    }
   }
 }
 </script>

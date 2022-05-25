@@ -19,7 +19,7 @@
       <input v-model="newGym.name" type="text">
     </div>
     <div class="col">
-      <label>Telefono *</label><br>
+      <label>Teléfono *</label><br>
       <input v-model="newGym.phone" type="number">
     </div>
     <div class="col">
@@ -35,7 +35,7 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Porcentaje de aforo permitido *:</label><br>
-      <input v-model="newGym.permited_capacity" type="number" min="0" max="100">
+      <input v-model="newGym.permittedCapacity" type="number" min="0" max="100">
     </div>
     <div class="col">
     </div>
@@ -45,17 +45,17 @@
     </div>
   </div>
 
-  <!-- Direccion -->
+  <!-- Dirección -->
   <br>
   <div class="row align-items-start">
     <div class="col">
-      <label style="font-size:32px">Direccion</label>
+      <label style="font-size:32px">Dirección</label>
     </div>
   </div>
 
   <div class="row align-items-start">
     <div class="col">
-      <label>Pais *:</label><br>
+      <label>País *:</label><br>
       <input v-model="newGym.country" type="text">
     </div>
     <div class="col">
@@ -75,14 +75,14 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Numero Exterior *:</label><br>
-      <input v-model="newGym.exteriornumber" type="number">
+      <input v-model="newGym.exteriorNumber" type="number">
     </div>
     <div class="col">
       <label>Colonia *:</label><br>
       <input v-model="newGym.colony" type="text">
     </div>
     <div class="col">
-      <label>Codigo Postal *:</label><br>
+      <label>Código Postal *:</label><br>
       <input v-model="newGym.zip" type="number">
     </div>
     <div class="col">

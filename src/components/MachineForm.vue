@@ -26,7 +26,7 @@
       <input v-model="newMachine.finalDate" type="date">
     </div>
     <div class="col">
-      <label>Periocidad de mantenimiento(en meses)*</label><br>
+      <label>Periodicidad de mantenimiento(en meses)*</label><br>
       <input v-model="newMachine.period" type="number" min="0">
     </div>
   </div>

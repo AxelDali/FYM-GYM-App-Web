@@ -32,14 +32,14 @@
   <div v-if="!fetching" class="row align-items-start">
      <div id="tabla">
       <!-- The table component -->
-       <Table :fields='fields' :fieldsNames='fieldsNames' :campaignsData='campaignsData' @delete="remove"></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='campaignsData' name="camp" @edit="edit" @delete="remove"></Table>
      </div>
   </div>
 </template>
 
 <script>
 import AdministrativeNavbar from '@/components/AdministrativeNavbar'
-import Table from '@/components/tablaCampaigns'
+import Table from '@/components/CatalogueTable'
 import { getCollection, deleteDocument } from '@/firebase'
 
 export default {
@@ -64,6 +64,9 @@ export default {
     async remove (id) {
       await deleteDocument('campaigns', id)
       this.campaignsData = await getCollection('campaigns')
+    },
+    edit (id) {
+      this.$router.push({ name: 'camp', params: { id: id } })
     }
   }
 }

@@ -49,11 +49,11 @@ export default {
   },
   setup () {
     const gymData = [
-      { Nombre: 'Titanes GMY', Telefono: '6251158963', Mensualidad: '350', Aforo: '25' },
-      { Nombre: 'Golden GYM', Telefono: '6241447896', Mensualidad: '500', Aforo: '30' }
+      { Nombre: 'Titanes GMY', Teléfono: '6251158963', Mensualidad: '350', Aforo: '25' },
+      { Nombre: 'Golden GYM', Teléfono: '6241447896', Mensualidad: '500', Aforo: '30' }
     ]
     const fields = [
-      'Nombre', 'Telefono', 'Mensualidad', 'Aforo'
+      'Nombre', 'Teléfono', 'Mensualidad', 'Aforo'
     ]
     return { fields, gymData }
   }

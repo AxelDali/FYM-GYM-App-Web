@@ -11,7 +11,8 @@
   </div>
   <div class="row align-items-start">
     <div class="col-md-6">
-       <input style="width:300px; height:36px" type="text" placeholder="Buscar...">
+       <!--                                                    cambio aqui para la busqueda   v   -->
+       <input style="width:300px; height:36px" type="text" placeholder="Buscar..." v-model="search">
        <img src="../assets/buscar.png" id="imageSearch">
     </div>
     <div class="col-md-3">
@@ -31,8 +32,8 @@
   </div>
   <div class="row align-items-start">
      <div id="tabla">
-      <!-- The table component -->
-       <Table :fields='fields' :fieldsNames='fieldsNames' :data='membershipsData' name="membresía" @delete="remove" @edit="edit"></Table>
+      <!-- The table component             cambio aqui para la busqueda   v   -->
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='filteredResult' name="camp" @edit="edit" @delete="remove"></Table>
      </div>
   </div>
 </template>
@@ -53,7 +54,8 @@ export default {
       membershipsData: null,
       fields: ['name', 'period', 'discount'],
       fieldsNames: ['Nombre', 'Periodo', 'Porcentaje de descuento'],
-      fetching: true
+      fetching: true,
+      search: '' // se necesita para la busqueda
     }
   },
   async created () {
@@ -67,6 +69,22 @@ export default {
     },
     edit (id) {
       this.$router.push({ name: 'membresia', params: { id: id } })
+    }
+  },
+  computed: { // se necesita para la busqueda
+    filteredResult () {
+      if (!this.membershipsData) {
+        return
+      }
+      return this.membershipsData.filter((element) => {
+        let flag = false
+        this.fields.forEach(field => {
+          if (element[field].toString().toLowerCase().match(this.search.toLowerCase())) {
+            flag = true
+          }
+        })
+        return flag
+      })
     }
   }
 }

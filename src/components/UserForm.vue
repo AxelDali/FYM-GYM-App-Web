@@ -2,15 +2,13 @@
     <br>
     <br>
     <div class="row align-items-start">
-      <div class="col">
+      <div class="col-md-6">
         <router-link to="/usuarios"><img src="../assets/back.png" id="back"></router-link>
         <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Usuario</span></h1>
       </div>
-      <div class="col">
+      <div class="col-md-3">
       </div>
-      <div class="col">
-      </div>
-      <div class="col">
+      <div class="col-md-3">
           <button type="submit" id="buttonSubmit">Registrar pago</button>
       </div>
     </div>
@@ -360,7 +358,7 @@ input, select, option, #formFile {
 }
 
 #back {
-    width: 10%;
+    width: 4.3%;
     padding-bottom: 20px;
 }
 

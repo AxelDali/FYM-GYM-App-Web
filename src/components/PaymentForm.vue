@@ -9,7 +9,7 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-      <button type="submit" id="buttonSubmit">Registrar objetivo</button>
+      <button type="submit" id="buttonSubmit">Registrar pago</button>
     </div>
   </div>
   <div class="row align-items-start">
@@ -20,13 +20,13 @@
   </div>
   <div class="row align-items-start">
     <div class="col">
-      <label>Monto a pagar*:</label>
+      <label>Monto a pagar*:</label><br>
       <input
         v-model="newPayment.subtotal"
         type="number" min = "0">
     </div>
     <div class="col">
-      <label>Campañas a las que aplica:</label>
+      <label>Campañas a las que aplica:</label><br>
       <select name="campaigns" v-model="newPayment.campaigns">
         <option selected>Seleccione una campañas</option>
         <option value="75">Forma tu cuerpo - 35%</option>
@@ -35,10 +35,12 @@
       </select>
     </div>
     <div class="col">
-      <label>Total a pagar:</label>
+      <label>Total a pagar:</label><br>
       <div>
         <label style="font-size:18px">$</label>
       </div>
+    </div>
+    <div class="col-md-3">
     </div>
   </div>
 </template>

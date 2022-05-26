@@ -1,18 +1,18 @@
 <template>
  <div class="home">
-    <LoginForm :login="login"/>
+    <FPasswordForm :FPassword="FPassword"/>
   </div>
 </template>
 <script>
-import LoginForm from '@/components/loginForm.vue'
+import FPasswordForm from '@/components/FPasswordForm.vue'
 
 export default {
   components: {
-    LoginForm
+    FPasswordForm
   },
   data () {
     return {
-      login: {
+      FPassword: {
         email: '',
         password: ''
       }

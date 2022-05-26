@@ -1,4 +1,12 @@
 <template>
+<div class="row">
+    <div class="col md-6">
+      <h1 style="font-size:28px">Pagos proximos a vencer</h1>
+    </div>
+    <div class="col md-6">
+      <h1 style="font-size:28px">Pagos vencidos</h1>
+    </div>
+  </div>
 <div class="row align-items-start ">
     <div class="col-md-6">
       <table id="tableComponent" class="table table-bordered">

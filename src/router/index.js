@@ -4,6 +4,11 @@ import HomeView from '../views/HomeView.vue'
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
+  },
+  {
+    path: '/panel_de_control',
     name: 'panel_de_control',
     component: HomeView
   },
@@ -16,9 +21,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
+    path: '/changePassword',
+    name: 'changePassword',
+    component: () => import(/* webpackChunkName: "login" */ '../views/CPasswordView.vue')
+  },
+  {
+    path: '/forgetPassword',
+    name: 'forgetPassword',
+    component: () => import(/* webpackChunkName: "login" */ '../views/FPasswordView.vue')
+  },
+  {
+    path: '/restorePassword',
+    name: 'restorePassword',
+    component: () => import(/* webpackChunkName: "login" */ '../views/RPasswordView.vue')
   },
   {
     path: '/usuarios',

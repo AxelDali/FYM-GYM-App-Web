@@ -1,18 +1,18 @@
 <template>
  <div class="home">
-    <LoginForm :login="login"/>
+    <RPasswordForm :RPassword="RPassword"/>
   </div>
 </template>
 <script>
-import LoginForm from '@/components/loginForm.vue'
+import RPasswordForm from '@/components/RPasswordForm.vue'
 
 export default {
   components: {
-    LoginForm
+    RPasswordForm
   },
   data () {
     return {
-      login: {
+      RPassword: {
         email: '',
         password: ''
       }

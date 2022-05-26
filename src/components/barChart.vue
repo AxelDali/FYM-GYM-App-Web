@@ -30,14 +30,6 @@
       <h1 style="font-size:32px">Personas</h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col md-6">
-      <h1 style="font-size:28px">Pagos proximos a vencer</h1>
-    </div>
-    <div class="col md-6">
-      <h1 style="font-size:28px">Pagos vencidos</h1>
-    </div>
-  </div>
 </template>
 
 <script>

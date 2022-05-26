@@ -1,19 +1,18 @@
 <template>
  <div class="home">
-    <LoginForm :login="login"/>
+    <CPasswordForm :CPassword="CPassword"/>
   </div>
 </template>
 <script>
-import LoginForm from '@/components/loginForm.vue'
+import CPasswordForm from '@/components/CPasswordForm.vue'
 
 export default {
   components: {
-    LoginForm
+    CPasswordForm
   },
   data () {
     return {
-      login: {
-        email: '',
+      CPassword: {
         password: ''
       }
     }

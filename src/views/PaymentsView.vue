@@ -39,7 +39,6 @@
 <script>
 import AdministrativeNavbar from '@/components/AdministrativeNavbar'
 import Table from '@/components/tablaPago'
-
 export default {
   name: 'tablaPago',
   components: {

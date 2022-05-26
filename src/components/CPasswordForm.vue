@@ -11,7 +11,7 @@
       </div>
       <div class="col-md-3">
           <label>Contraseña actual *:</label><br>
-          <input type="email" required><br>
+          <input type="password" required><br>
       </div>
       <div class="col-md-3">
       </div>

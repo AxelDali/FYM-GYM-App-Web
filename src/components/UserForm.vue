@@ -4,7 +4,7 @@
     <form v-on:submit='save'>
         <div class="row align-items-start">
         <div class="col-md-6">
-            <router-link to="/usuarios"><img src="../assets/back.png" id="back"></router-link>
+            <router-link to="/usuarios"><img src="../assets/back.png" id="imageBack"></router-link>
             <h1 v-if="!edit" style="font-size:32px">Registrar un <span class="styleTitle"> Usuario</span></h1>
             <h1 v-else style="font-size:32px">Modificar un <span class="styleTitle"> Usuario</span></h1>
         </div>

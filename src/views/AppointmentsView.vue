@@ -22,17 +22,14 @@
     <div class="col-md-4">
       <label>Gimnasio</label><br>
       <select name="objectives" class="appointmentField">
-          <option value="power gym">Power gym</option>
-          <option value="max gym">Max gym</option>
+        <option v-for="gym in gymsData" :key="gym['name']" value="gym['name']">{{ gym['name'] }}</option>
       </select>
     </div>
     <div class="col-md-4">
       <label>Socio:</label>
       <select name="campaigns" class="appointmentField">
         <option selected>Seleccione un socio</option>
-        <option value="75">Rene Rodriguez</option>
-        <option value="80">Adrian Alarcon</option>
-        <option value="60">Dali Gomez</option>
+        <option v-for="member in membersData" :key="member['id']" value="member['id']">{{ member['name'] }}  {{ member['lastName'] }}</option>
       </select>
     </div>
     <div class="col-md-4">
@@ -127,9 +124,7 @@
                 <label>Instructor:</label><br>
                 <select name="campaigns" class="appointmentField">
                   <option selected>Seleccione un Instructor</option>
-                  <option value="75">Sin instructor</option>
-                  <option value="75">Ximena Chavez</option>
-                  <option value="80">Gabriel Mar</option>
+                  <option v-for="trainer in trainersData" :key="trainer['id']" value="trainer['id']">{{ trainer['name'] }}  {{ trainer['lastName'] }}</option>
                 </select>
             </div>
             <div class="col">
@@ -220,11 +215,22 @@
 </template>
 
 <script>
+import { getCollection } from '@/firebase'
 export default {
   data () {
     return {
-      newAppointment: { ...this.appointment }
+      newAppointment: { ...this.appointment },
+      gymsData: null,
+      usersData: null,
+      membersData: null,
+      trainersData: null
     }
+  },
+  async created () {
+    this.gymsData = await getCollection('gyms')
+    this.usersData = await getCollection('users')
+    this.trainersData = this.usersData.filter(user => user.type === 'entrenador')
+    this.membersData = this.usersData.filter(user => user.type === 'socio')
   },
   props: {
     appointment: {

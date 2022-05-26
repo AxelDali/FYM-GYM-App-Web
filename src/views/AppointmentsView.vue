@@ -141,7 +141,7 @@ export default {
   clear: both;
 }
 
-appointmentsFrame{
+.appointmentsFrame{
   margin-left: 250px;
   margin-right: 250px;
 }

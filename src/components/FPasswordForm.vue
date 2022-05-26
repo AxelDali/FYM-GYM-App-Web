@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-3">
         <label>Usuario *:</label><br>
-        <input type="email"><br>
+        <input type="email" required><br>
     </div>
     <div class="col-md-3">
     </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-3">
         <label>¿En que ciudad naciste? *:</label><br>
-        <input type="text"><br>
+        <input type="text" required><br>
     </div>
     <div class="col-md-3">
     </div>

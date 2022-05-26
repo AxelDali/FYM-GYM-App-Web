@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-3">
       <label>Correo *:</label><br>
-      <input type="email"><br>
+      <input type="email" required><br>
     </div>
     <div class="col-md-3">
     </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-3">
         <label>Contraseña *:</label><br>
-        <input type="password"><br>
+        <input type="password" required><br>
         <router-link :to="{name: 'forgetPassword'}"><a id="link" href="">Olvide mi contraseña</a></router-link>
     </div>
     <div class="col-md-3">

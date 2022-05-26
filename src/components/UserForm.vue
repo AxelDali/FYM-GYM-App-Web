@@ -17,7 +17,7 @@
     <div class="row align-items-start align-items-center">
         <div class="col">
             <label>Tipo de usuario *</label><br>
-            <select name="campaigns" v-model="newUser.type">
+            <select name="campaigns" v-model="newUser.type" required>
                 <option selected="selected" value="socio">Socio</option>
                 <option value="instructor">Instructor</option>
                 <option value="recepcionista">Recepcionista</option>
@@ -41,63 +41,63 @@
         <div class="row align-items-start">
             <div class="col">
                 <label>Nombre *:</label><br>
-                <input v-model="newUser.name" type="text">
+                <input v-model="newUser.name" type="text" required>
             </div>
             <div class="col">
                 <label>Apellido Paterno *</label><br>
-                <input v-model="newUser.lastName" type="text">
+                <input v-model="newUser.lastName" type="text" required>
             </div>
             <div class="col">
                 <label>Apellido Materno</label><br>
-                <input v-model="newUser.lastName2" type="text">
+                <input v-model="newUser.lastName2" type="text" required>
             </div>
             <div class="col">
                 <label>Teléfono *</label><br>
-                <input v-model="newUser.phone" type="number">
+                <input v-model="newUser.phone" type="number" required>
             </div>
         </div>
 
         <div class="row align-items-start">
             <div class="col">
                 <label>Email *:</label><br>
-                <input v-model="newUser.email" type="email">
+                <input v-model="newUser.email" type="email" required>
             </div>
             <div class="col">
                 <label>Fecha de nacimiento *</label><br>
-                <input v-model="newUser.birthDate" type="date">
+                <input v-model="newUser.birthDate" type="date" required>
             </div>
             <div class="col">
                 <label>Fecha de corte *</label><br>
-                <input v-model="newUser.cutDate" type="date">
+                <input v-model="newUser.cutDate" type="date" required>
             </div>
             <div class="col">
                 <label>Fecha de entrada *</label><br>
-                <input v-model="newUser.enterDate" type="date">
+                <input v-model="newUser.enterDate" type="date" required>
             </div>
         </div>
 
         <div class="row align-items-start">
             <div class="col">
                 <label>Minutos de antelación *:</label><br>
-                <input v-model="newUser.notificationTimeWindow" type="number">
+                <input v-model="newUser.notificationTimeWindow" type="number" required>
             </div>
             <div class="col">
                 <label>Genero *</label><br>
-                <select name="genders" v-model="newUser.gender">
+                <select name="genders" v-model="newUser.gender" required>
                     <option value="female">Femenino</option>
                     <option value="male">Masculino</option>
                 </select>
             </div>
             <div class="col">
                 <label>Membresía *</label><br>
-                <select name="membership" v-model="newUser.membership">
+                <select name="membership" v-model="newUser.membership" required>
                     <option value="pro">Pro</option>
                     <option value="normal">Normal</option>
                 </select>
             </div>
             <div class="col">
                 <label>Objetivos *</label><br>
-                <select name="objectives" v-model="newUser.objectives">
+                <select name="objectives" v-model="newUser.objectives" required>
                     <option value="strength">Fuerza</option>
                     <option value="athleticism">Atletismo</option>
                 </select>
@@ -110,44 +110,44 @@
         <div class="row align-items-start">
             <div class="col">
                 <label>Nombre *:</label><br>
-                <input v-model="newUser.name" type="text">
+                <input v-model="newUser.name" type="text" required>
             </div>
             <div class="col">
                 <label>Apellido Paterno *</label><br>
-                <input v-model="newUser.lastName" type="text">
+                <input v-model="newUser.lastName" type="text" required>
             </div>
             <div class="col">
                 <label>Apellido Materno</label><br>
-                <input v-model="newUser.lastName2" type="text">
+                <input v-model="newUser.lastName2" type="text" required>
             </div>
             <div class="col">
                 <label>Teléfono *</label><br>
-                <input v-model="newUser.phone" type="number">
+                <input v-model="newUser.phone" type="number" required>
             </div>
         </div>
 
         <div class="row align-items-start">
             <div class="col">
                 <label>Email *:</label><br>
-                <input v-model="newUser.email" type="email">
+                <input v-model="newUser.email" type="email" required>
             </div>
             <div class="col">
                 <label>Genero *</label><br>
-                <select name="genders" v-model="newUser.gender">
+                <select name="genders" v-model="newUser.gender" required>
                     <option value="female">Femenino</option>
                     <option value="male">Masculino</option>
                 </select>
             </div>
             <div class="col">
                 <label>Membresía *</label><br>
-                <select name="membership" v-model="newUser.membership">
+                <select name="membership" v-model="newUser.membership" required>
                     <option value="pro">Pro</option>
                     <option value="normal">Normal</option>
                 </select>
             </div>
             <div class="col">
                 <label>Fecha de entrada *</label><br>
-                <input v-model="newUser.enterDate" type="date">
+                <input v-model="newUser.enterDate" type="date" required>
             </div>
         </div>
     </div>
@@ -157,38 +157,38 @@
         <div class="row align-items-start">
             <div class="col">
                 <label>Nombre *:</label><br>
-                <input v-model="newUser.name" type="text">
+                <input v-model="newUser.name" type="text" required>
             </div>
             <div class="col">
                 <label>Apellido Paterno *</label><br>
-                <input v-model="newUser.lastName" type="text">
+                <input v-model="newUser.lastName" type="text" required>
             </div>
             <div class="col">
                 <label>Apellido Materno</label><br>
-                <input v-model="newUser.lastName2" type="text">
+                <input v-model="newUser.lastName2" type="text" required>
             </div>
             <div class="col">
                 <label>Teléfono *</label><br>
-                <input v-model="newUser.phone" type="number">
+                <input v-model="newUser.phone" type="number" required>
             </div>
         </div>
 
         <div class="row align-items-start">
             <div class="col">
                 <label>Email *:</label><br>
-                <input v-model="newUser.email" type="email">
+                <input v-model="newUser.email" type="email" required>
             </div>
             <div class="col">
                 <label>Fecha de certificación *</label><br>
-                <input v-model="newUser.certificationDate" type="date">
+                <input v-model="newUser.certificationDate" type="date" required>
             </div>
             <div class="col">
                 <label>Referencia de certificación *:</label><br>
-                <input class="form-control" type="file" id="formFile" >
+                <input class="form-control" type="file" id="formFile" required>
             </div>
             <div class="col">
                 <label>Objetivos *</label><br>
-                <select name="objectives" v-model="newUser.objectives">
+                <select name="objectives" v-model="newUser.objectives" required>
                     <option value="strength">Fuerza</option>
                     <option value="athleticism">Atletismo</option>
                 </select>
@@ -198,28 +198,28 @@
         <div class="row align-items-start">
             <div class="col">
                 <label>Inicio de jornada *</label><br>
-                <select name="objectives" v-model="newUser.workShiftStart">
+                <select name="objectives" v-model="newUser.workShiftStart" required>
                     <option value="12:00">12:00</option>
                     <option value="13:00">13:00</option>
                 </select>
             </div>
             <div class="col">
                 <label>Final de jornada *</label><br>
-                <select name="objectives" v-model="newUser.workShiftEnd">
+                <select name="objectives" v-model="newUser.workShiftEnd" required>
                     <option value="12:00">12:00</option>
                     <option value="13:00">13:00</option>
                 </select>
             </div>
             <div class="col">
                 <label>Dias en los que labora *</label><br>
-                <select name="objectives" v-model="newUser.workdays">
+                <select name="objectives" v-model="newUser.workdays" required>
                     <option value="jueves">Jueves</option>
                     <option value="viernes">Viernes</option>
                 </select>
             </div>
             <div class="col">
                 <label>Gimnasio *</label><br>
-                <select name="objectives" v-model="newUser.workdays">
+                <select name="objectives" v-model="newUser.workdays" required>
                     <option value="power gym">Power gym</option>
                     <option value="max gym">Max gym</option>
                 </select>
@@ -238,34 +238,34 @@
     <div class="row align-items-start">
         <div class="col">
             <label>País *:</label><br>
-            <input v-model="newUser.country" type="text">
+            <input v-model="newUser.country" type="text" required>
         </div>
         <div class="col">
             <label>Estado *:</label><br>
-            <input v-model="newUser.state" type="text">
+            <input v-model="newUser.state" type="text" required>
         </div>
         <div class="col">
             <label>Ciudad *:</label><br>
-            <input v-model="newUser.city" type="text">
+            <input v-model="newUser.city" type="text" required>
         </div>
         <div class="col">
             <label>Calle *:</label><br>
-            <input v-model="newUser.street" type="text">
+            <input v-model="newUser.street" type="text" required>
         </div>
     </div>
 
     <div class="row align-items-start">
         <div class="col">
             <label>Numero Exterior *:</label><br>
-            <input v-model="newUser.exteriorNumber" type="number">
+            <input v-model="newUser.exteriorNumber" type="number" required>
         </div>
         <div class="col">
             <label>Colonia *:</label><br>
-            <input v-model="newUser.colony" type="text">
+            <input v-model="newUser.colony" type="text" required>
         </div>
         <div class="col">
             <label>Código Postal *:</label><br>
-            <input v-model="newUser.zip" type="number">
+            <input v-model="newUser.zip" type="number" required>
         </div>
         <div class="col">
         </div>

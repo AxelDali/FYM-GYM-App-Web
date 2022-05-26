@@ -17,19 +17,19 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Nombre *:</label><br>
-      <input v-model="newGym.name" type="text">
+      <input v-model="newGym.name" type="text" required>
     </div>
     <div class="col">
       <label>Teléfono *</label><br>
-      <input v-model="newGym.phone" type="number">
+      <input v-model="newGym.phone" type="number" required>
     </div>
     <div class="col">
       <label>Mensualidad *</label><br>
-      <input v-model="newGym.cost" type="number" min="0">
+      <input v-model="newGym.cost" type="number" min="0" required>
     </div>
     <div class="col">
       <label>Aforo *</label><br>
-      <input v-model="newGym.capacity" type="number" min="0">
+      <input v-model="newGym.capacity" type="number" min="0" required>
     </div>
   </div>
 

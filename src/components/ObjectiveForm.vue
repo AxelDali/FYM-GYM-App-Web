@@ -16,12 +16,12 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Nombre *:</label><br>
-      <input v-model="newObjective.name" type="text">
+      <input v-model="newObjective.name" type="text" required>
     </div>
     <div class="col">
       <label>Descripción *:</label><br>
       <textarea
-        v-model="newObjective.description"></textarea>
+        v-model="newObjective.description" required></textarea>
     </div>
     <div class="col">
     </div>

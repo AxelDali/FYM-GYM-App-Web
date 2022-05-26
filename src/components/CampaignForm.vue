@@ -20,46 +20,46 @@
       <label>Título *:</label><br>
       <input
         v-model="newCampaign.title"
-        type="text">
+        type="text" required>
     </div>
     <div class="col">
       <label>Descripción *:</label><br>
       <textarea
-        v-model="newCampaign.description"></textarea>
+        v-model="newCampaign.description" required></textarea>
     </div>
     <div class="col">
       <label>Fecha de publicación *</label><br>
       <input
         v-model="newCampaign.publicationDate"
-        type="date">
+        type="date" required>
     </div>
     <div class="col">
       <label>Fecha de caducidad *</label><br>
       <input
         v-model="newCampaign.expirationDate"
-        type="date">
+        type="date" required>
     </div>
   </div>
 
   <div class="row align-items-start">
     <div class="col">
       <label>Tipo de descuento *</label><br>
-      <select name="discountType" v-model="newCampaign.discountType">
+      <select name="discountType" v-model="newCampaign.discountType" required>
         <option value="percentage">Porcentaje de la mensualidad</option>
         <option value="amount">Cantidad fija</option>
       </select>
     </div>
     <div v-if="newCampaign.discountType === 'percentage'" class="col" >
       <label>Porcentaje de descuento *</label><br>
-      <input v-model="newCampaign.discount" type="number" min="0" max="100">
+      <input v-model="newCampaign.discount" type="number" min="0" max="100" required>
     </div>
     <div v-if="newCampaign.discountType === 'amount'" class="col" >
       <label>Cantidad de descuento *</label><br>
-      <input v-model="newCampaign.discount" type="number" min="0" max="100">
+      <input v-model="newCampaign.discount" type="number" min="0" max="100" required>
     </div>
     <div class="col">
       <label>Tipo de cliente al que aplica *</label><br>
-      <select name="clientType" v-model="newCampaign.clientType">
+      <select name="clientType" v-model="newCampaign.clientType" required>
         <option value="newAccount">Nuevas cuentas</option>
         <option value="loyalty">Lealtad</option>
         <option value="gender">Género</option>
@@ -67,11 +67,11 @@
     </div>
     <div v-if="newCampaign.clientType === 'loyalty'" class="col" >
       <label>Lealtad a la que aplica *</label><br>
-      <input v-model="newCampaign.client" type="number" min="0" >
+      <input v-model="newCampaign.client" type="number" min="0" required>
     </div>
     <div v-if="newCampaign.clientType === 'gender'" class="col" >
       <label>Género al que aplica *</label><br>
-      <select name="genders" v-model="newCampaign.client">
+      <select name="genders" v-model="newCampaign.client" required>
         <option value="female">Femenino</option>
         <option value="male">Masculino</option>
       </select>

@@ -2,7 +2,7 @@
   <AdministrativeNavbar/>
   <div class="row align-items-start">
     <div class="col-md-6">
-      <h1 style="font-size:32px">Modificar una <span class="styleTitle"> Maquina</span></h1>
+      <h1 style="font-size:32px">Modificar un <span class="styleTitle"> Maquina</span></h1>
     </div>
     <div class="col-md-3">
     </div>
@@ -11,7 +11,8 @@
   </div>
   <div class="row align-items-start">
     <div class="col-md-6">
-       <input style="width:300px; height:36px" type="text" placeholder="Buscar...">
+       <!--                                                    cambio aqui para la busqueda   v   -->
+       <input style="width:300px; height:36px" type="text" placeholder="Buscar..." v-model="search">
        <img src="../assets/buscar.png" id="imageSearch">
     </div>
     <div class="col-md-3">
@@ -31,15 +32,16 @@
   </div>
   <div class="row align-items-start">
      <div id="tabla">
-      <!-- The table component -->
-       <Table :fields='fields' :maquinaData='maquinaData'></Table>
+      <!-- The table component             cambio aqui para la busqueda   v   -->
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='filteredResult' name="maquina" @edit="edit" @delete="remove"></Table>
      </div>
   </div>
 </template>
 
 <script>
 import AdministrativeNavbar from '@/components/AdministrativeNavbar'
-import Table from '@/components/tablaMaquina'
+import Table from '@/components/CatalogueTable'
+import { getCollection, deleteDocument } from '@/firebase'
 
 export default {
   name: 'tablaMaquina',
@@ -47,15 +49,43 @@ export default {
     AdministrativeNavbar,
     Table
   },
-  setup () {
-    const maquinaData = [
-      { Nombre: 'Mancuerna', Gimnasio: 'Titanes GYM', Cantidad: '50' },
-      { Nombre: 'Pesa de 50kg', Gimnasio: 'Gema Gyms', Cantidad: '25' }
-    ]
-    const fields = [
-      'Nombre', 'Gimnasio', 'Cantidad'
-    ]
-    return { fields, maquinaData }
+  data () {
+    return {
+      machinesData: null,
+      fields: ['name', 'gym', 'finalDate', 'period'],
+      fieldsNames: ['Nombre', 'Gimnasio', 'Ultima fecha de mantenimiento', 'Periocidad de mantenimiento'],
+      fetching: true,
+      search: '' // se necesita para la busqueda
+    }
+  },
+  async created () {
+    this.machinesData = await getCollection('machines')
+    this.fetching = false
+  },
+  methods: {
+    async remove (id) {
+      await deleteDocument('machines', id)
+      this.machinesData = await getCollection('machines')
+    },
+    edit (id) {
+      this.$router.push({ name: 'maquina', params: { id: id } })
+    }
+  },
+  computed: { // se necesita para la busqueda
+    filteredResult () {
+      if (!this.machinesData) {
+        return
+      }
+      return this.machinesData.filter((element) => {
+        let flag = false
+        this.fields.forEach(field => {
+          if (element[field].toString().toLowerCase().match(this.search.toLowerCase())) {
+            flag = true
+          }
+        })
+        return flag
+      })
+    }
   }
 }
 </script>

@@ -17,11 +17,11 @@
   <div class="row align-items-start">
     <div class="col">
       <label>Nombre *:</label><br>
-      <input v-model="newMembership.name" type="text">
+      <input v-model="newMembership.name" type="text" required>
     </div>
     <div class="col">
       <label>Periodo *:</label><br>
-      <select name="periods" v-model="newMembership.period">
+      <select name="periods" v-model="newMembership.period" required>
         <option value=1>Mensual</option>
         <option value=3>Trimestral</option>
         <option value=6>Semestral</option>
@@ -30,7 +30,7 @@
     </div>
     <div class="col">
       <label>Porcentaje de descuento *:</label><br>
-      <input v-model="newMembership.discount" type="number" min="0" max="100">
+      <input v-model="newMembership.discount" type="number" min="0" max="100" required>
     </div>
     <div class="col">
     </div>

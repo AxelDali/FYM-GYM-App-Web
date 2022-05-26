@@ -23,11 +23,11 @@
       <label>Monto a pagar*:</label><br>
       <input
         v-model="newPayment.subtotal"
-        type="number" min = "0">
+        type="number" min = "0" required>
     </div>
     <div class="col">
       <label>Campañas a las que aplica:</label><br>
-      <select name="campaigns" v-model="newPayment.campaigns">
+      <select name="campaigns" v-model="newPayment.campaigns" required>
         <option selected>Seleccione una campañas</option>
         <option value="75">Forma tu cuerpo - 35%</option>
         <option value="80">Energiza el corazón - 20%</option>

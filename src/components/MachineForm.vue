@@ -9,40 +9,63 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-3">
-      <button type="submit" id="buttonSubmit">Registrar maquina</button>
+      <button type="submit" id="buttonSubmit" v-on:click="save">Registrar máquina</button>
     </div>
   </div>
   <div class="row align-items-start">
     <div class="col">
       <label>Nombre *:</label><br>
-      <input v-model="newMachine.name" type="text">
+      <input v-model="newMachine.name" type="text" required>
     </div>
     <div class="col">
       <label>Serial *</label><br>
-      <input v-model="newMachine.serial" type="number">
+      <input v-model="newMachine.serial" type="number" required>
     </div>
     <div class="col">
       <label>Ultima fecha de mantenimiento *</label><br>
-      <input v-model="newMachine.finalDate" type="date">
+      <input v-model="newMachine.finalDate" type="date" required>
     </div>
     <div class="col">
       <label>Periodicidad de mantenimiento(en meses)*</label><br>
-      <input v-model="newMachine.period" type="number" min="0">
+      <input v-model="newMachine.period" type="number" min="0" required>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <select name="campaigns" v-model="newMachine.gym" required>
+        <option selected="selected" value="Gema GYM">Gema GYM</option>
+        <option value="Titanes GYM">Titanes GYM</option>
+      </select>
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  emits: ['save'],
   data () {
     return {
       newMachine: { ...this.machine }
+    }
+  },
+  methods: {
+    save () {
+      this.$emit('save', this.newMachine)
     }
   },
   props: {
     machine: {
       required: true,
       type: Object
+    },
+    edit: {
+      type: String
     }
   }
 }

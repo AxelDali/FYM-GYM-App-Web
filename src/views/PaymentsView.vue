@@ -56,6 +56,7 @@ export default {
   },
   async created () {
     this.usersData = await getCollection('users')
+    this.usersData = this.usersData.filter(user => user.type === 'socio')
     this.fetching = false
   },
   methods: {

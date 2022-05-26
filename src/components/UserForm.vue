@@ -124,6 +124,19 @@
                     <input v-model="newUser.phone" type="number" required>
                 </div>
             </div>
+
+            <div class="row align-items-start">
+                <div class="col">
+                    <label>Email *:</label><br>
+                    <input v-model="newUser.email" type="email" required>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                </div>
+            </div>
         </div>
 
         <!-- Form del instructor -->
@@ -157,8 +170,8 @@
                     <input v-model="newUser.certificationDate" type="date" required>
                 </div>
                 <div class="col">
-                    <label>Referencia de certificación *:</label><br>
-                    <input class="form-control" type="file" id="formFile" required>
+                    <label>Referencia de certificación:</label><br>
+                    <input class="form-control" type="file" id="formFile">
                 </div>
                 <div class="col">
                     <label>Objetivos *</label><br>
@@ -186,6 +199,11 @@
                 <div class="col">
                     <label>Dias en los que labora *</label><br>
                     <select name="objectives" v-model="newUser.workdays" required>
+                        <option value="sabado">Sabado</option>
+                        <option value="domingo">Domingo</option>
+                        <option value="lunes">Lunes</option>
+                        <option value="martes">Martes</option>
+                        <option value="miercoles">Miercoles</option>
                         <option value="jueves">Jueves</option>
                         <option value="viernes">Viernes</option>
                     </select>

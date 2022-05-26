@@ -128,7 +128,7 @@
                 </select>
             </div>
             <div class="col">
-                <label>recurrencia:</label>
+                <label>Recurrencia:</label>
                 <select class="appointmentField">
                   <option selected>Nunca </option>
                   <option value="75">Semanal</option>
@@ -229,7 +229,7 @@ export default {
   async created () {
     this.gymsData = await getCollection('gyms')
     this.usersData = await getCollection('users')
-    this.trainersData = this.usersData.filter(user => user.type === 'entrenador')
+    this.trainersData = this.usersData.filter(user => user.type === 'instructor')
     this.membersData = this.usersData.filter(user => user.type === 'socio')
   },
   props: {

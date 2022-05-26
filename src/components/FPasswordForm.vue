@@ -5,7 +5,7 @@
     <h1 style="font-size:32px">Olvide mi <span class="styleTitle"> Contraseña</span></h1>
   </div>
   <br>
-  <div class="row align-items-start">
+  <div class="row align-items-start loginFrame">
     <div class="col-md-4">
     </div>
     <div class="col-md-3">
@@ -15,7 +15,7 @@
     <div class="col-md-3">
     </div>
   </div>
-  <div class="row align-items-start">
+  <div class="row align-items-start loginFrame">
     <div class="col-md-4">
     </div>
     <div class="col-md-3">
@@ -25,7 +25,7 @@
     <div class="col-md-3">
     </div>
   </div>
-  <div class="row align-items-start">
+  <div class="row align-items-start loginFrame">
     <div class="col-md-4">
     </div>
     <div class="col-md-3">

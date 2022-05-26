@@ -19,7 +19,7 @@
           <ul class="dropdown-menu dropdown-menu-lg-end">
             <li><a class="dropdown-item" href="#">Perfil</a></li>
             <li><a class="dropdown-item" href="./changePassword">Actualizar Contraseña</a></li>
-            <li><a class="dropdown-item" href="./panel_de_control">Cerrar sesion</a></li>
+            <li><a class="dropdown-item" href="./login">Cerrar sesion</a></li>
           </ul>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <br>
   <br>
-  <form v-on:submit='save'>
+  <form action="/pagos/lista">
     <div class="row align-items-start">
       <div class="col-md-6">
         <router-link :to="{name: 'pagos'}"><img src="../assets/back.png" id="imageBack"></router-link>

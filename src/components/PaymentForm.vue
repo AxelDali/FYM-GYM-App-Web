@@ -1,6 +1,7 @@
 <template>
   <br>
   <br>
+<<<<<<< HEAD
   <form v-on:submit='save'>
     <div class="row align-items-start">
       <div class="col-md-6">
@@ -12,6 +13,34 @@
       <div class="col-md-3">
         <button type="submit" id="buttonSubmit">Registrar pago</button>
       </div>
+=======
+  <div class="row align-items-start">
+    <div class="col-md-6">
+      <router-link :to="{name: 'pagos'}"><img src="../assets/back.png" id="imageBack"></router-link>
+      <h1 style="font-size:32px">Registrar un <span class="styleTitle"> Pago</span></h1>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-3">
+      <button type="submit" id="buttonSubmit">Registrar pago</button>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <label>Monto a pagar*:</label><br>
+      <input
+        v-model="newPayment.subtotal"
+        type="number" min = "0" required>
+    </div>
+    <div class="col">
+      <label>Campañas a las que aplica:</label><br>
+      <select name="campaigns" v-model="newPayment.campaigns" required>
+        <option selected>Seleccione una campañas</option>
+        <option value="75">Forma tu cuerpo - 35%</option>
+        <option value="80">Energiza el corazón - 20%</option>
+        <option value="60">Únete a la familia - 40%</option>
+      </select>
+>>>>>>> 7d9e078bd8494fff6fcd4bc245e90418f89013b8
     </div>
     <div class="row align-items-start">
       <div class="col">

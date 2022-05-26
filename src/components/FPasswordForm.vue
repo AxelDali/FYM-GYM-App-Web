@@ -1,40 +1,42 @@
 <template>
   <br>
   <br>
-  <div class="row align-items-start">
-    <h1 style="font-size:32px">Olvide mi <span class="styleTitle"> Contraseña</span></h1>
-  </div>
-  <br>
-  <div class="row align-items-start loginFrame">
-    <div class="col-md-4">
+  <form action="/restorePassword">
+    <div class="row align-items-start">
+      <h1 style="font-size:32px">Olvide mi <span class="styleTitle"> Contraseña</span></h1>
     </div>
-    <div class="col-md-3">
-        <label>Usuario *:</label><br>
-        <input type="email" required><br>
+    <br>
+    <div class="row align-items-start loginFrame">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-3">
+          <label>Usuario *:</label><br>
+          <input type="email" required><br>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-    <div class="col-md-3">
+    <div class="row align-items-start loginFrame">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-3">
+          <label>¿En que ciudad naciste? *:</label><br>
+          <input type="text" required><br>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-  </div>
-  <div class="row align-items-start loginFrame">
-    <div class="col-md-4">
+    <div class="row align-items-start loginFrame">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-3">
+          <button type="submit" id="buttonSubmit">Aceptar</button>
+          <router-link :to="{name: 'login'}"><a id="link" href="">Ir a inicio de sesión</a></router-link>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-    <div class="col-md-3">
-        <label>¿En que ciudad naciste? *:</label><br>
-        <input type="text" required><br>
-    </div>
-    <div class="col-md-3">
-    </div>
-  </div>
-  <div class="row align-items-start loginFrame">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-3">
-        <router-link :to="{name: 'restorePassword'}"><button type="submit" id="buttonSubmit">Aceptar</button></router-link>
-        <router-link :to="{name: 'login'}"><a id="link" href="">Ir a inicio de sesión</a></router-link>
-    </div>
-    <div class="col-md-3">
-    </div>
-  </div>
+  </form>
 </template>
 <script>
 export default {

@@ -1,33 +1,35 @@
 <template>
   <br>
   <br>
-  <div class="row align-items-start">
-    <div class="col-md-6">
-      <router-link :to="{name: 'objetivos'}"><img src="../assets/back.png" id="imageBack"></router-link>
-      <h1 v-if="!edit" style="font-size:32px">Registrar un <span class="styleTitle"> Objetivo</span></h1>
-      <h1 v-else style="font-size:32px">Modificar un <span class="styleTitle"> Objetivo</span></h1>
+  <form v-on:submit='save'>
+    <div class="row align-items-start">
+      <div class="col-md-6">
+        <router-link :to="{name: 'objetivos'}"><img src="../assets/back.png" id="imageBack"></router-link>
+        <h1 v-if="!edit" style="font-size:32px">Registrar un <span class="styleTitle"> Objetivo</span></h1>
+        <h1 v-else style="font-size:32px">Modificar un <span class="styleTitle"> Objetivo</span></h1>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3">
+        <button type="submit" id="buttonSubmit">Registrar objetivo</button>
+      </div>
     </div>
-    <div class="col-md-3">
+    <div class="row align-items-start">
+      <div class="col">
+        <label>Nombre *:</label><br>
+        <input v-model="newObjective.name" type="text" required>
+      </div>
+      <div class="col">
+        <label>Descripción *:</label><br>
+        <textarea
+          v-model="newObjective.description" required></textarea>
+      </div>
+      <div class="col">
+      </div>
+      <div class="col">
+      </div>
     </div>
-    <div class="col-md-3">
-      <button type="submit" id="buttonSubmit" v-on:click="save">Registrar objetivo</button>
-    </div>
-  </div>
-  <div class="row align-items-start">
-    <div class="col">
-      <label>Nombre *:</label><br>
-      <input v-model="newObjective.name" type="text" required>
-    </div>
-    <div class="col">
-      <label>Descripción *:</label><br>
-      <textarea
-        v-model="newObjective.description" required></textarea>
-    </div>
-    <div class="col">
-    </div>
-    <div class="col">
-    </div>
-  </div>
+  </form>
 </template>
 
 <script>

@@ -1,39 +1,41 @@
 <template>
   <br>
   <br>
-  <div class="row align-items-start">
-    <h1 style="font-size:32px">Restablecer mi<span class="styleTitle"> Contraseña</span></h1>
-  </div>
-  <br>
-  <div class="row align-items-start">
-    <div class="col-md-4">
+  <form action="/">
+    <div class="row align-items-start">
+      <h1 style="font-size:32px">Restablecer mi<span class="styleTitle"> Contraseña</span></h1>
     </div>
-    <div class="col-md-3">
-        <label>Contraseña nueva *:</label><br>
-        <input type="password" required><br>
+    <br>
+    <div class="row align-items-start">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-3">
+          <label>Contraseña nueva *:</label><br>
+          <input type="password" required><br>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-    <div class="col-md-3">
+    <div class="row align-items-start">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-3">
+          <label>Confirmar *:</label><br>
+          <input type="password" required><br>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-  </div>
-  <div class="row align-items-start">
-    <div class="col-md-4">
+    <div class="row align-items-start">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-3">
+          <button type="submit" id="buttonSubmit">Restablecer contraseña</button>
+      </div>
+      <div class="col-md-3">
+      </div>
     </div>
-    <div class="col-md-3">
-        <label>Confirmar *:</label><br>
-        <input type="password" required><br>
-    </div>
-    <div class="col-md-3">
-    </div>
-  </div>
-  <div class="row align-items-start">
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-3">
-        <router-link :to="{name: 'login'}"><button type="submit" id="buttonSubmit">Restablecer contraseña</button></router-link>
-    </div>
-    <div class="col-md-3">
-    </div>
-  </div>
+  </form>
 </template>
 <script>
 export default {

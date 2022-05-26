@@ -1,40 +1,42 @@
 <template>
   <br>
   <br>
-  <div class="row align-items-start">
-    <div class="col-md-6">
-      <router-link :to="{name: 'membresias'}"><img src="../assets/back.png" id="back-md-6"></router-link>
-      <h1 v-if="!edit" style="font-size:32px">Registrar una <span class="styleTitle"> Membresía</span></h1>
-      <h1 v-else style="font-size:32px">Modificar una <span class="styleTitle"> Membresía</span></h1>
+  <form v-on:submit='save'>
+    <div class="row align-items-start">
+      <div class="col-md-6">
+        <router-link :to="{name: 'membresias'}"><img src="../assets/back.png" id="back-md-6"></router-link>
+        <h1 v-if="!edit" style="font-size:32px">Registrar una <span class="styleTitle"> Membresía</span></h1>
+        <h1 v-else style="font-size:32px">Modificar una <span class="styleTitle"> Membresía</span></h1>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3">
+        <button type="submit" id="buttonSubmit">Registrar membresía</button>
+      </div>
     </div>
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-3">
-      <button type="submit" id="buttonSubmit" v-on:click="save">Registrar membresía</button>
-    </div>
-  </div>
 
-  <div class="row align-items-start">
-    <div class="col">
-      <label>Nombre *:</label><br>
-      <input v-model="newMembership.name" type="text" required>
+    <div class="row align-items-start">
+      <div class="col">
+        <label>Nombre *:</label><br>
+        <input v-model="newMembership.name" type="text" required>
+      </div>
+      <div class="col">
+        <label>Periodo *:</label><br>
+        <select name="periods" v-model="newMembership.period" required>
+          <option value=1>Mensual</option>
+          <option value=3>Trimestral</option>
+          <option value=6>Semestral</option>
+          <option value=12>Anual</option>
+        </select>
+      </div>
+      <div class="col">
+        <label>Porcentaje de descuento *:</label><br>
+        <input v-model="newMembership.discount" type="number" min="0" max="100" required>
+      </div>
+      <div class="col">
+      </div>
     </div>
-    <div class="col">
-      <label>Periodo *:</label><br>
-      <select name="periods" v-model="newMembership.period" required>
-        <option value=1>Mensual</option>
-        <option value=3>Trimestral</option>
-        <option value=6>Semestral</option>
-        <option value=12>Anual</option>
-      </select>
-    </div>
-    <div class="col">
-      <label>Porcentaje de descuento *:</label><br>
-      <input v-model="newMembership.discount" type="number" min="0" max="100" required>
-    </div>
-    <div class="col">
-    </div>
-  </div>
+  </form>
 </template>
 
 <script>

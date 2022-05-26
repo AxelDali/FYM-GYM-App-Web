@@ -32,9 +32,9 @@
   </div>
   <div class="row align-items-start">
     <div class="col">
+      <label>Gimnasio *</label><br>
       <select name="campaigns" v-model="newMachine.gym" required>
-        <option selected="selected" value="Gema GYM">Gema GYM</option>
-        <option value="Titanes GYM">Titanes GYM</option>
+        <option v-for="gym in gymsData" :key="gym['name']" value="gym['name']">{{ gym['name'] }}</option>
       </select>
     </div>
     <div class="col">
@@ -47,12 +47,17 @@
 </template>
 
 <script>
+import { getCollection } from '@/firebase'
 export default {
   emits: ['save'],
   data () {
     return {
-      newMachine: { ...this.machine }
+      newMachine: { ...this.machine },
+      gymsData: null
     }
+  },
+  async created () {
+    this.gymsData = await getCollection('gyms')
   },
   methods: {
     save () {

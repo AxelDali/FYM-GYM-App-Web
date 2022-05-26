@@ -92,15 +92,13 @@
                 <div class="col">
                     <label>Membresía *</label><br>
                     <select name="membership" v-model="newUser.membership" required>
-                        <option value="pro">Pro</option>
-                        <option value="normal">Normal</option>
+                      <option v-for="membership in membershipsData" :key="membership['name']" value="membership">{{ membership['name'] }}</option>
                     </select>
                 </div>
                 <div class="col">
                     <label>Objetivos *</label><br>
                     <select name="objectives" v-model="newUser.objectives" required>
-                        <option value="strength">Fuerza</option>
-                        <option value="athleticism">Atletismo</option>
+                        <option v-for="objective in objectivesData" :key="objective['name']" value="objective['name']">{{ objective['name'] }}</option>
                     </select>
                 </div>
             </div>
@@ -124,31 +122,6 @@
                 <div class="col">
                     <label>Teléfono *</label><br>
                     <input v-model="newUser.phone" type="number" required>
-                </div>
-            </div>
-
-            <div class="row align-items-start">
-                <div class="col">
-                    <label>Email *:</label><br>
-                    <input v-model="newUser.email" type="email" required>
-                </div>
-                <div class="col">
-                    <label>Genero *</label><br>
-                    <select name="genders" v-model="newUser.gender" required>
-                        <option value="female">Femenino</option>
-                        <option value="male">Masculino</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label>Membresía *</label><br>
-                    <select name="membership" v-model="newUser.membership" required>
-                        <option value="pro">Pro</option>
-                        <option value="normal">Normal</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <label>Fecha de entrada *</label><br>
-                    <input v-model="newUser.enterDate" type="date" required>
                 </div>
             </div>
         </div>
@@ -190,8 +163,7 @@
                 <div class="col">
                     <label>Objetivos *</label><br>
                     <select name="objectives" v-model="newUser.objectives" required>
-                        <option value="strength">Fuerza</option>
-                        <option value="athleticism">Atletismo</option>
+                        <option v-for="objective in objectivesData" :key="objective['name']" value="objective['name']">{{ objective['name'] }}</option>
                     </select>
                 </div>
             </div>
@@ -220,9 +192,8 @@
                 </div>
                 <div class="col">
                     <label>Gimnasio *</label><br>
-                    <select name="objectives" v-model="newUser.workdays" required>
-                        <option value="power gym">Power gym</option>
-                        <option value="max gym">Max gym</option>
+                    <select name="gym" v-model="newUser.gym" required>
+                      <option v-for="gym in gymsData" :key="gym['name']" value="gym['name']">{{ gym['name'] }}</option>
                     </select>
                 </div>
             </div>
@@ -287,12 +258,21 @@
 </template>
 
 <script>
+import { getCollection } from '@/firebase'
 export default {
   emits: ['save'],
   data () {
     return {
-      newUser: { ...this.user }
+      newUser: { ...this.user },
+      gymsData: null,
+      objectivesData: null,
+      membershipsData: null
     }
+  },
+  async created () {
+    this.gymsData = await getCollection('gyms')
+    this.objectivesData = await getCollection('objectives')
+    this.membershipsData = await getCollection('memberships')
   },
   methods: {
     save () {

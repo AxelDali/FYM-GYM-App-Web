@@ -33,7 +33,7 @@
   <div class="row align-items-start">
      <div id="tabla">
       <!-- The table component             cambio aqui para la busqueda   v   -->
-       <Table :fields='fields' :fieldsNames='fieldsNames' :data='filteredResult' name="camp" @edit="edit" @delete="remove"></Table>
+       <Table :fields='fields' :fieldsNames='fieldsNames' :data='filteredResult' name="gimnasio" @edit="edit" @delete="remove"></Table>
      </div>
   </div>
 </template>

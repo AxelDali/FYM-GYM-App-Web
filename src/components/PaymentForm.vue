@@ -29,10 +29,8 @@
       <div class="col">
         <label>Campañas a las que aplica:</label><br>
         <select name="campaigns" v-model="newPayment.campaigns" required>
-          <option selected>Seleccione una campañas</option>
-          <option value="75">Forma tu cuerpo - 35%</option>
-          <option value="80">Energiza el corazón - 20%</option>
-          <option value="60">Únete a la familia - 40%</option>
+          <option selected>Seleccione una campaña</option>
+          <option v-for="campaign in campaignsData" :key="campaign['title']" value="campaign['title']">{{ campaign['title'] }}</option>
         </select>
       </div>
       <div class="col">
@@ -48,11 +46,17 @@
 </template>
 
 <script>
+import { getCollection } from '@/firebase'
 export default {
   data () {
     return {
-      newPayment: { ...this.payment }
+      newPayment: { ...this.payment },
+      campaignsData: null
     }
+  },
+  async created () {
+    this.campaignsData = await getCollection('campaigns')
+    this.campaignsData = this.campaignsData.filter(campaign => campaign.published === true)
   },
   props: {
     payment: {

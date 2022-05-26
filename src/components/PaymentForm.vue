@@ -14,12 +14,6 @@
   </div>
   <div class="row align-items-start">
     <div class="col">
-      <label>Cliente: </label>
-      <label>Gabriel Mar</label>
-    </div>
-  </div>
-  <div class="row align-items-start">
-    <div class="col">
       <label>Monto a pagar*:</label><br>
       <input
         v-model="newPayment.subtotal"
